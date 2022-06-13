@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+interface Credentials {
+  "email": string,
+  "password": string 
+
+}
 
 @Component({
   selector: 'app-login-component',
@@ -6,8 +11,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login-component.component.css']
 })
 export class LoginComponentComponent {
-onLogin(user: string): void {
-  console.log('user ->', user);
+
+onSubmit(values: any): void{
+  console.info(values)
 }
 
 }
