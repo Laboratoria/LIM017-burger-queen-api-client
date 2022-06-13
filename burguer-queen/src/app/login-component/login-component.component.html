@@ -1,0 +1,11 @@
+<p>login-component works!</p>
+<!-- Creando un form para loguearse -->
+<div>
+    <form action="">
+        <label for="newItem"> Correo electrónico </label>
+        <input type="text" id="newItem" #newItem>
+        <label for="newItem2"> Contraseña</label>
+        <input type="password" id="newItem2" #newItem2>
+        <input (click)="onLogin(newItem.value)" type="submit" value="Ingresar">
+    </form>
+</div>
