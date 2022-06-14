@@ -620,6 +620,7 @@ para mantener actualizado el menú.
 * [json-server](https://www.npmjs.com/package/json-server)
 * [mockoon](https://mockoon.com)
 * [nock](https://github.com/nock/nock)
+* [mock service worker](https://mswjs.io/)
 
 ### PWA
 
