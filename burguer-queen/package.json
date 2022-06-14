@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "serverAPI": "json-server --port5000 --watch resData.js"
   },
   "private": true,
   "dependencies": {
