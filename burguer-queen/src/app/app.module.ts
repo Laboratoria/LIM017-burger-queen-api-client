@@ -1,27 +1,43 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponentComponent } from './login-component/login-component.component';
 import { AdminComponent } from './admin/admin.component';
+import { OrderComponent } from './order/order.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponentComponent,
-    AdminComponent
+    AdminComponent,
+    OrderComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+/* crear una interface para ver la data solicitada con http */
+
+export interface Order {
+  id: any;
+  name: string;
+  precio: number;
+}
+
+
 
 /*  --- enumerables para asignar valores  ----*/
 
