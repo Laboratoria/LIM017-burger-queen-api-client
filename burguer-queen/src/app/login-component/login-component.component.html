@@ -1,0 +1,15 @@
+<p>login-component works!</p>
+<!-- Creando un form para loguearse --> 
+<!-- hay que oculatr el div de verificacion -->
+
+<div>
+    <form (ngSubmit)="onSubmit(loginForm.value)" #loginForm = "ngForm">
+        <label for="newItem"> Correo electrónico </label>
+        <input type="text" id="newItem" class="form-control" name="email" #name="ngModel" ngModel required="">
+        <div [hidden]="name.valid  || name.pristine" class="alert alert-danger">Correo inválido</div>    
+        <label for="newItem2"> Contraseña</label>
+        <input type="password" id="newItem2" class="form-control"name="password"  #newItem="ngModel" ngModel required>
+        <div [hidden]="newItem.valid  || newItem.pristine" class="alert alert-danger">Contraseña inválida</div>    
+        <input  type="submit" value="Ingresar"[disabled]="loginForm.invalid">
+    </form>
+</div> 

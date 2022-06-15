@@ -1,32 +1,41 @@
-<app-menu-desayunos></app-menu-desayunos>
-<p>{{ title }}</p>
-<!-- Creando un form para loguearse -->
-<label for=""> Correo electrónico </label>
-<input type="text" [(ngModel)]="user">
-<label for=""> Contraseña</label>
-<input type="password" [(ngModel)]="password">
-
 <!-- Menú de desayunos -->
-<ul  *ngFor="let breakfast of desayunos">
-  <li *ngIf="password" >{{breakfast}}</li>
-</ul>
-<img *ngIf="password" src = "{{coffee}}"alt ="">
-<label *ngIf="password" > Café americano </label>
-<img *ngIf="password"  src = "{{capuccinno}}"alt ="">
-<label *ngIf="password" > Café con leche </label>
-<img *ngIf="password"  src="{{sandwich}}" alt="">
-<label *ngIf="password" > Sandwich de jamón y queso </label>
-<img *ngIf="password"  src = "{{juice}}"alt ="">
-<label *ngIf="password" > Jugos naturales </label>
-<img *ngIf="password"  src = "{{bolon}}"alt ="">
-<label *ngIf="password"  for="">Bolón mixto con huevo</label>
-<input [ngClass]="{'hide': false}" type="submit" value="Enviar">
 
-<!-- Almuerzos y cenas -->
-<ul *ngFor=" let almuerzo of almuerzos">
-<li *ngIf="password"> {{almuerzo.principal}} </li>
-<li *ngIf="password" > {{almuerzo.acompanamiento}} </li>
-<li *ngIf="password"> {{almuerzo.bebidas}} </li>
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <app-login-component></app-login-component>
+    </div>
+    <div class="col-md-8">
+      <div>
+        <ul>
+          <li *ngFor="let breakfast of desayunos" (click)="onClick(breakfast)" [ngClass]="{'alert alert-info': breakfast === selection}">{{breakfast}}</li>
+        </ul>
+        <img src="{{coffee}}" alt="">
+        <label> Café americano </label>
+        <img  src="{{capuccinno}}" alt="">
+        <label> Café con leche </label>
+        <img src="{{sandwich}}" alt="">
+        <label> Sandwich de jamón y queso </label>
+        <img src="{{juice}}" alt="">
+        <label> Jugos naturales </label>
+        <img src="{{bolon}}" alt="">
+        <label for="">Bolón mixto con huevo</label>
 
+        <!-- Almuerzos y cenas -->
+        <ul *ngFor=" let almuerzo of almuerzos">
+          <li> {{almuerzo.principal}} </li>
+          <li> {{almuerzo.acompanamiento}} </li>
+          <li> {{almuerzo.bebidas}} </li>
+        </ul>
+      </div>
+      <!-- Tabla de pedidos -->
+      <div *ngIf="selection">
+        <p> Tu pedido es: {{selection}} </p>
+        <button (click)="onClear()">Nuevo pedido</button>
 
+      </div>
+
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+</div>
