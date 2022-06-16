@@ -1,41 +1,7 @@
-<!-- Menú de desayunos -->
-
-<div class="container">
+<div class="container2">
   <div class="row">
-    <div class="col-md-12">
-      <app-login-component></app-login-component>
+    <div class="col-6">
+      <router-outlet></router-outlet>
     </div>
-    <div class="col-md-8">
-      <div>
-        <ul>
-          <li *ngFor="let breakfast of desayunos" (click)="onClick(breakfast)" [ngClass]="{'alert alert-info': breakfast === selection}">{{breakfast}}</li>
-        </ul>
-        <img src="{{coffee}}" alt="">
-        <label> Café americano </label>
-        <img  src="{{capuccinno}}" alt="">
-        <label> Café con leche </label>
-        <img src="{{sandwich}}" alt="">
-        <label> Sandwich de jamón y queso </label>
-        <img src="{{juice}}" alt="">
-        <label> Jugos naturales </label>
-        <img src="{{bolon}}" alt="">
-        <label for="">Bolón mixto con huevo</label>
-
-        <!-- Almuerzos y cenas -->
-        <ul *ngFor=" let almuerzo of almuerzos">
-          <li> {{almuerzo.principal}} </li>
-          <li> {{almuerzo.acompanamiento}} </li>
-          <li> {{almuerzo.bebidas}} </li>
-        </ul>
-      </div>
-      <!-- Tabla de pedidos -->
-      <div *ngIf="selection">
-        <p> Tu pedido es: {{selection}} </p>
-        <button (click)="onClear()">Nuevo pedido</button>
-
-      </div>
-
-    </div>
-    <div class="col-md-4"></div>
   </div>
 </div>

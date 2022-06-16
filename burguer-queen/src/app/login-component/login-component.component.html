@@ -2,7 +2,7 @@
 <!-- Creando un form para loguearse --> 
 <!-- hay que oculatr el div de verificacion -->
 
-<div>
+<div class="login">
     <form (ngSubmit)="onSubmit(loginForm.value)" #loginForm = "ngForm">
         <label for="newItem"> Correo electrónico </label>
         <input type="text" id="newItem" class="form-control" name="email" #name="ngModel" ngModel required="">
