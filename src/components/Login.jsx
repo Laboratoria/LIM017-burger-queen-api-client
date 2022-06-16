@@ -1,17 +1,31 @@
+import {useState} from 'react'
 
 export function Login(){
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+ const onSubmitHandler = (e) =>{
+  e.preventDefault()
+  console.log('Hola mundo', e);
+ }
+  const onInputHandler = (e) =>{
+
+    const userEmail = e.target.value;
+    setEmail(userEmail)
+    console.log(email)
+  }
+
   return(
   <> 
   <div className="App">
-    <h3 class="title-login">Burger Queen</h3>
+    <h3 className="title-login">Burger Queen</h3>
     <form>
-      <div class="mb-3">
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresar email" />
+      <div className="mb-3">
+        <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresar email" name="username" onInput={onInputHandler}/>
       </div>
-      <div class="mb-3">
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Ingresar contraseña"/>
+      <div className="mb-3">
+        <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Ingresar contraseña" name="password"/>
       </div>
-      <button  type="submit" class="btn btn-primary">Ingresar</button>
+      <button  onClick={onSubmitHandler} type="submit" className="btn btn-primary">Ingresar</button>
     </form>
   </div>
   </>
