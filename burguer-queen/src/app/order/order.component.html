@@ -1,23 +1,34 @@
-<p>order works!</p>
-<div class="http" *ngFor="let product of menu " >
-   {{product.name}} 
-   {{product.precio}} 
- 
-
+<h1>MENU</h1>
+<div class="rown">
+  <div class="imgBreakfast" >
+    <img src="./assets/img/breakfast.svg" alt="Desayunos" class="breakfast">
+  </div>
+  <div class="img-lunch">
+    <img src="./assets/img/Hamburger.svg" alt="Almuerzos y cenas" class="lunch">
+     </div>
 </div>
+
 <!-- Menú de desayunos -->
 
 <div class="container" >
    <div class="row">
-     <div class="col-md-8">
+     <div class="col-md-12">
        <!-- <app-login-component></app-login-component> -->
      </div>
      <div class="col-md-8">
        <div >
-         <ul>
-           <li *ngFor="let breakfast of desayunos" (click)="onClick(breakfast)" [ngClass]="{'alert alert-info': breakfast === selection}">{{breakfast}}</li>
-         </ul>
-         <img src="{{coffee}}" alt="">
+        <label for="client"><mark>Nombre del cliente</mark></label>
+        <input type="text" name="" id="client">
+         <ul class="list-group">
+           <li *ngFor="let breakfast of desayunos" (click)="onClick(breakfast)" [ngClass]="{'alert alert-info': breakfast === selection}">{{breakfast}}
+            <div>
+              <label for="cantidad">Cantidad</label>
+              <input type="text" id="cantidad">
+              </div>
+  
+           </li>
+           </ul>
+         <!-- <img src="{{coffee}}" alt="">
          <label> Café americano </label>
          <img  src="{{capuccinno}}" alt="">
          <label> Café con leche </label>
@@ -26,7 +37,7 @@
          <img src="{{juice}}" alt="">
          <label> Jugos naturales </label>
          <img src="{{bolon}}" alt="">
-         <label for="">Bolón mixto con huevo</label>
+         <label for="">Bolón mixto con huevo</label> -->
  
          <!-- Almuerzos y cenas -->
          <ul *ngFor=" let almuerzo of almuerzos">
@@ -44,7 +55,19 @@
  
      </div>
      <div class="col-md-4">
-       <img src="./assets/img/Coffee.svg">
+      <div class="http" *ngFor="let product of menu " > 
+        <!-- //posible cambiar a tabla -->
+        <ul class="list-group">
+          <li class="list-group-item">
+            {{product.name}} 
+            {{product.cost}}
+          <button type="button" class="btn btn-danger float-end">Delete</button> 
+          </li>
+        </ul>
+        </div>
+       <p>Total:</p>
+       <button type="button" class="btn btn-success">Enviar a Cocina</button>
+       <!-- <img src="./assets/img/Coffee.svg"> -->
        <!-- <app-order></app-order> -->
      </div>
    </div>

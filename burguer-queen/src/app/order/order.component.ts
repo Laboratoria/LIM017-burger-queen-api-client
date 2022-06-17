@@ -13,7 +13,7 @@ export class OrderComponent implements OnInit {
 
  title = 'Ecuaburguer';
   selection!: string;
-  desayunos = [' café americano', 'café con leche', 'sandwich de jamón y queso', 'jugos naturales', 'bolón'];
+  desayunos = [' café americano $1', 'café con leche $2', 'sandwich de jamón y queso $3', 'jugos naturales $2', 'bolón $3'];
   almuerzos = [{
     principal: ['Encebollado', 'Seco de pollo', 'Yapingacho', 'Guatita', 'Hornado'],
     acompanamiento: ['chifle', 'pan', 'arroz'],

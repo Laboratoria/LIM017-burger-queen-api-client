@@ -8,6 +8,8 @@ import { LoginComponentComponent } from './login-component/login-component.compo
 import { AdminComponent } from './admin/admin.component';
 import { OrderComponent } from './order/order.component';
 import { RegisterComponent } from './register/register.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
@@ -15,14 +17,15 @@ import { RegisterComponent } from './register/register.component';
     LoginComponentComponent,
     AdminComponent,
     OrderComponent,
-    RegisterComponent
+    RegisterComponent,
+    NavbarComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]
@@ -35,6 +38,7 @@ export interface Order {
   id: any;
   name: string;
   precio: number;
+  cost: string;
 }
 
 

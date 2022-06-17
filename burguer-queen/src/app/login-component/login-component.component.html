@@ -1,8 +1,5 @@
 <!-- Creando un form para loguearse --> 
 <!-- hay que oculatr el div de verificacion -->
-<head>
-    
-</head>
 <body>
 <div class="logochef">
     <img src="./assets/img/Chef.svg">
@@ -19,5 +16,6 @@
         <div [hidden]="newItem.valid  || newItem.pristine" class="alert alert-danger">Contraseña inválida</div><br>  
         <input class="btn" type="submit" value="Ingresar"[disabled]="loginForm.invalid">
     </form>
+    <a routerLink="/home">Regresar al Home</a>
 </div> 
 </body>
