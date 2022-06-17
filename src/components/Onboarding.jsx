@@ -3,13 +3,7 @@ import {useNavigate } from 'react-router-dom'
 
 
 export function Onboarding(){
-  // function Navigate(){
-  //   useNavigate('/login')
-  // } 
-  // const history = useHistory()
-  // function RouterLogin(){
-  //   history.push('/login')
-  // };
+  
   const navigate = useNavigate()
   return (
     <div className="App">
