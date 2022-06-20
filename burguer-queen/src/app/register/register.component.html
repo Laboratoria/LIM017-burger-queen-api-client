@@ -4,17 +4,18 @@
     </div>
     
     <div class="Register">
-        <form (ngSubmit)="onSubmit(loginForm.value)" #loginForm = "ngForm"><br> 
+        <form [formGroup]= "form"(submit)="onSubmitInRegister()" ><br> 
             <p>ECUABURGUER</p>
-            <label for="nameUser"> Nombre </label>
-            <input type="text" id="nameUser" class="form-control" name="nameUser" #name="ngModel" ngModel required=""><br> 
+            <p *ngIf="messageError" class="alert alert-danger"> Error {{messageError}} al registrarse</p>
+            <!-- <p *ngIf="messageInfo"  class="alert-info"> Registro exitoso, redireccionando al login!</p> -->
+         
             <label for="newItem"> Correo electrónico </label>
-            <input type="text" id="newItem" class="form-control" name="email" #name="ngModel" ngModel required=""><br> 
-            <div [hidden]="name.valid  || name.pristine" class="alert alert-danger">Correo inválido</div>    
+            <input type="text" id="newItem" class="form-control" name="email" formControlName="email"><br> 
+            <!-- <div [hidden]="name.valid  || name.pristine" class="alert alert-danger">Correo inválido</div>     -->
             <label for="newItem2"> Contraseña</label>
-            <input type="password" id="newItem2" class="form-control"name="password"  #newItem="ngModel" ngModel required>
-            <div [hidden]="newItem.valid  || newItem.pristine" class="alert alert-danger">Contraseña inválida</div><br>  
-            <input class="btn" type="submit" value="Ingresar"[disabled]="loginForm.invalid">
+            <input type="password" id="newItem2" class="form-control"name="password" formControlName = "password" >
+            <!-- <div [hidden]="newItem.valid  || newItem.pristine" class="alert alert-danger">Contraseña inválida</div><br>   -->
+            <input class="btn" type="submit" value="Ingresar">
         </form>
         <a routerLink="/login">Inicia Sesión</a>
     </div> 
