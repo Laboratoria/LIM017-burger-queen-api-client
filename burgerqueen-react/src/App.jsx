@@ -1,11 +1,11 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import navbarWaiter from './components/Navbar-Waiter';
+import NavbarWaiter from './components/Navbar-Waiter';
 
 function App() {
   return (
     <>
-      <navbarWaiter />
+      <NavbarWaiter />
       <div className='container'>
         <Outlet />
       </div>
