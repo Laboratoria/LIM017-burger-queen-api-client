@@ -4,6 +4,9 @@ import './App.css'
 import {Login} from './components/Login'
 import {Onboarding} from './components/Onboarding'
 import {Navbar} from '../src/components/Navbar/Navbar'
+import {Home} from './components/Home/Home'
+import {Login} from './components/Login/Login'
+import {Onboarding} from './components/Onboarding/Onboarding'
 
 function App() {
  return (
@@ -12,6 +15,9 @@ function App() {
       {/* <Route path='/' element={<Onboarding/>}/>
       <Route path='/login' element={<Login/>}/> */}
       <Route path='/Navbar' element={<Navbar/>}/>
+      <Route path='/' element={<Onboarding/>}/>
+      <Route path='/login' element={<Login/>}/>
+      <Route path='/home' element={<Home/>}/> 
     </Routes>
   </BrowserRouter>
  )
