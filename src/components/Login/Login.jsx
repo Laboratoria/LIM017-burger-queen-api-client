@@ -26,7 +26,7 @@ export function Login(){
   await axios.get(baseUrl, {params:{email:user.email, password:user.password}})
     .then(response =>{
       const data = response.data;
-
+console.log(data);
       if(data.length>0){
         let respuesta = data[0];
         cookies.set('id', respuesta.id, {path:'/'})
