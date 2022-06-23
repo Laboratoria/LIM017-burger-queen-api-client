@@ -50,13 +50,18 @@ export function Login(){
           // }
     })
  };
+ const [errorMessage, setErrorMessage] = useState();
+ const handlerError = (e) =>{
+  setErrorMessage({
+    
+    // let emailError;
+    if(errorMessage === "Request failed with status code 400"){
+       <Error message='El usuario o la contraseña no son correctas' />
+     }
+  
+  })
+ }
  
- let emailError;
- if(error.message === "Request failed with status code 400"){
-   emailError= <Error message='El usuario o la contraseña no son correctas' />
-  }else{
-   emailError = null;
-  }
   const handlerUser = (e) =>{
     e.preventDefault()
     setUser({
@@ -123,7 +128,7 @@ export function Login(){
         <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Ingresar contraseña" name="password" onInput={handlerUser}/>
       </div>
       <div className='passInvalid'>
-         {emailError} 
+         {/* {emailError}  */}
       </div>
       <div className="loginButton">
       <Button onClick={onSubmitHandler} className="btn btn-warning btn-lg" type="submit" name="Iniciar Sesión"></Button>
