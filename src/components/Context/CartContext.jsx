@@ -7,7 +7,7 @@ const [cartItems, setCartItems] = useState(() => {
     try {
         const productsLocalStorage = localStorage.getItem('cartProducts');
         return productsLocalStorage ? JSON.parse(productsLocalStorage) : [];
-    } catch (error) {
+    }   catch (error) {
         return [];
     }
 });
