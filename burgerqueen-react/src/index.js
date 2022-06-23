@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Inicio from './views/Inicio'
-import Login from './views/Login'
+import Inicio from './views/Inicio/Inicio'
+import Login from './views/Inicio/Login'
 import App from './App';
 import Profile from './views/Waiter/Profile';
 import Order from "./views/Waiter/Order";
@@ -11,11 +11,11 @@ import Home from "./views/Waiter/Home";
 import PageNotFound from "./views/Waiter/PageNotFound";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-   <React.StrictMode>
-     <App />
-   </React.StrictMode>
-);
+// root.render(
+//    <React.StrictMode>
+//      <App />
+//    </React.StrictMode>
+// );
 root.render(
   <BrowserRouter>
     <Routes>

@@ -1,10 +1,12 @@
 import './Login.css';
 import {useState} from 'react';
-import logo from './newDir/IconBurger.svg';
+import logo from '../newDir/IconBurger.svg';
+import { useNavigate } from "react-router-dom"
 
 // COMPONENTE PARA FORMULARIO
 
 const LoginForm = () => {
+  let navigate = useNavigate()
 
     const [datos, setDatos] = useState({
         email: '',
@@ -12,8 +14,8 @@ const LoginForm = () => {
     })
 
     const handleInputChange = (event) => {
-        console.log(event.target.name)
-        console.log(event.target.value)
+        // console.log(event.target.name)
+        // console.log(event.target.value)
         setDatos({
             ...datos,
             [event.target.name] : event.target.value
@@ -22,7 +24,29 @@ const LoginForm = () => {
 
     const enviarDatos = (event) => {
         event.preventDefault()
-        console.log(`enviando datos nuevos: ${datos.email}, ${datos.password}`)
+        console.log(`enviando datos nuevos: ${datos.email}, ${datos.password}`);
+        // 
+        const url = 'http://localhost:3001/auth';
+        const {email, password} = datos;
+        console.log({email, password})
+
+        fetch(url, {
+          method: 'POST', // or 'PUT'
+          body: JSON.stringify({email, password}),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }).then(res => res.json())
+        .then(response => {
+          if(response.token !== undefined){
+            console.log('tenemos token', response)
+
+            return navigate('/Waiter')
+            
+          } return console.log('no hay token , es 400');
+        })
+        .catch(error => console.error('Error:', error));
+        // 
     }
 
     return (
