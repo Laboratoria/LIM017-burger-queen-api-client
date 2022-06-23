@@ -5,7 +5,7 @@
     font-size: 18px;
   }
   .App-main {
-    background-image: url('./newDir/Burger.png');
+    background-image: url('../newDir/Burger.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center;

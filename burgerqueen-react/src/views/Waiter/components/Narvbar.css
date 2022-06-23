@@ -1,0 +1,5 @@
+.configuration{
+    background-color: rgb(237, 162, 162);
+    display: flex;
+    justify-content: space-around;
+}
