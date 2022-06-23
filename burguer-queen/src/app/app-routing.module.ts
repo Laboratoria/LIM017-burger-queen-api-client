@@ -6,13 +6,13 @@ import { OrderComponent } from './order/order.component';
 import { AdminComponent } from './admin/admin.component';
 import { RegisterComponent } from './register/register.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   { path: '',redirectTo: '/home', pathMatch: 'full'},
   { path: 'login', component: LoginComponentComponent},
   { path: 'waiter', component: OrderComponent},
-  { path: 'admin', component: AdminComponent },
-  { path: 'home', component: AppComponent},
+  { path: 'home', component: HomeComponent},
   { path: 'register', component: RegisterComponent },
   { path: '**', component: PagenotfoundComponent}
 

@@ -1,16 +1,25 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { OrderComponent } from './order.component';
 
+
 describe('OrderComponent', () => {
+
+
   let component: OrderComponent;
   let fixture: ComponentFixture<OrderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OrderComponent ]
+      imports: [HttpClientTestingModule],
+      declarations: [ OrderComponent ],
+      schemas: [ NO_ERRORS_SCHEMA   ]
+      
     })
     .compileComponents();
+
 
     fixture = TestBed.createComponent(OrderComponent);
     component = fixture.componentInstance;
@@ -20,4 +29,24 @@ describe('OrderComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+});
+
+
+describe('myService', () => {
+
+  beforeEach(() => TestBed.configureTestingModule({
+    imports: [HttpClientTestingModule], 
+    providers: ['']
+  }));
+
+   it('should be created', () => {
+    const service: any = TestBed.get('');
+    expect(service).toBeTruthy();
+   });
+
+   it('should have getData function', () => {
+    const service: any = TestBed.get('');
+    expect(service.getData).toBeTruthy();
+   });
+
 });

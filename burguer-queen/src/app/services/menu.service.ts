@@ -8,7 +8,7 @@ import { Order } from '../app.module';
 })
 export class MenuService {
   private apiUrl = 'http://localhost:3000/menu';
-  private endPoint1 = 'http://localhost:3001/auth'
+  //private url = 'http://localhost:3001/auth'
 
   constructor(private http: HttpClient) { }
 

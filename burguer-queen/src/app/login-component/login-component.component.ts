@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Order } from '../app.module';
 import { MenuService } from '../services/menu.service';
 import { Router } from '@angular/router';
@@ -19,13 +19,15 @@ export class LoginComponentComponent implements OnInit {
   menu: Order[] = [];
   form!: FormGroup;
   messageError: undefined;
-  constructor(public formBuilder: FormBuilder, public menuService: MenuService, private router:Router) { }
+  constructor(public formBuilder: FormBuilder,
+     public menuService: MenuService, 
+     private router:Router) { }
 
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      email: [''],
-      password: [''],
+      email: ['',[Validators.required, Validators.email]],
+      password: ['', Validators.required]
     }) 
   }
 
@@ -36,15 +38,15 @@ export class LoginComponentComponent implements OnInit {
         email: this.form.value.email,
         password: this.form.value.password
       })
-      .subscribe(
-        res => {
-        console.info(res), this.router.navigate(['/waiter'])
-      },
-       error => {
-        // mostrar error igukando propiedad:
-        this.messageError = error.status
-       }
-       )
+      .subscribe( { 
+        next: res => {
+          console.info(res), this.router.navigate(['/waiter'])
+        },
+         error: error => {
+          // mostrar error igukando propiedad:
+          this.messageError = error.status; 
+         },
+      });
   }
   // onSubmit(values: Order): void{
   //   console.info(values)

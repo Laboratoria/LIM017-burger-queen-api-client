@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MenuService } from '../services/menu.service';
 import { Router } from '@angular/router';
 
@@ -21,8 +21,8 @@ export class RegisterComponent implements OnInit {
     this.form = this.formbuilder.group(
       //los hijos de control:
       {
-        email: [''],
-        password: [''],
+        email: ['', Validators.required, Validators.email],
+        password: ['', Validators.required],
       }
     )
   }
@@ -32,20 +32,19 @@ export class RegisterComponent implements OnInit {
       email: this.form.value.email,
       password: this.form.value.password
     })
-    .subscribe(
-      res => { 
-         setTimeout(() => {
-          this.router.navigate(['/login'])
-        }, 2000)
-        
+    .subscribe({
+      next: res => { 
+        setTimeout(() => {
+         this.router.navigate(['/login'])
+       }, 1000)
+       
 
-        console.info(res)
-      },
-      error => {
-        this.messageError = error.status;
-      }
-      
-    )
+       console.info(res)
+     },
+     error: error => {
+       this.messageError = error.status;
+     }
+    });
     //es como un evento y vamos a capturar valores y asignarlos a:
     
   }

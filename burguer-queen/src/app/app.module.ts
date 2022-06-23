@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,  CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule} from '@angular/common/http';
@@ -10,6 +10,9 @@ import { OrderComponent } from './order/order.component';
 import { RegisterComponent } from './register/register.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { HomeComponent } from './home/home.component';
+import { MenuService } from './services/menu.service';
+import { AuthGuard } from './auth/auth.guard';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     OrderComponent,
     RegisterComponent,
     NavbarComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +32,10 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     HttpClientModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    MenuService, AuthGuard
+  ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
