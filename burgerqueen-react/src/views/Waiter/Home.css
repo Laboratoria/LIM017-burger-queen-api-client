@@ -1,59 +1,94 @@
 .Home{
-    display: grid;
-    grid-template-rows: 1fr 8fr;
-    height: 94vh;
-}
-.section__chooseMenu{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
-    padding: 10px;
-}
-.section__chooseMenu>div{
-    background-color: aquamarine;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.section__chooseMenu>div>button{
-    width: 350px;
-    height: 60px;
-    position: absolute;
-    background-color: white;
-    text-align: left;
-    padding: 20px;
-    border: none;
-    box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.512);
-    border-radius: 18px;
-}
-.section__chooseMenu>div>button:hover{
-background: #EE5803;
-cursor: pointer;
-}
-.section__chooseMenu>div>img{
-    position: relative;
-    width: 80px;
-    left: 150px;
-}
-.section__makeOrder{
     background-image: url('../newDir/Burger.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center;
     background-size: cover;
     display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    height: 93vh;
+    font-family: 'Poppins';
+}
+.section__chooseMenu{
+    background-color: rgb(64, 226, 43);
+    display: grid;
+    grid-template-rows: 1fr 6fr;
+    gap: 5px;
+    padding: 10px;
+}
+.div__buttons{
+    background-color: aquamarine;
+    display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 5px;
+}
+.div__buttons>div{
+    background-color: rgb(227, 255, 127);
+    padding: 10px;
+    width: 100%;
+}
+
+.section__chooseMenu>div>div>button{
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    text-align: left;
+    padding-left: 30px;
+    border: none;
+    box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.512);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.section__chooseMenu>div>div>button:hover{
+background: #EE5803;
+cursor: pointer;
+}
+.section__chooseMenu>div>div>button>img{
+    width: 90px;
+}
+
+.section__makeOrder{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
 }
 .products{
-    background-color: rgba(137, 43, 226, 0.33);
+    background-color: rgba(226, 43, 144, 0.692); 
     display: grid;
     grid-template-rows: 1fr 4fr;
 }
-.choos-by-type{
-    display: grid;
+.choose-by-type{
+    /* display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    background-color: rgba(0, 128, 0, 0.321)
+    background-color: rgba(233, 236, 16, 0.644);
+    text-align: center; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
 }
-.listOfOrder{
+.choose-by-type>div{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    background-color: #ffffff57;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 18px;
+    padding: 10px;
+    gap: 10px;
+    color: white;
+}
+.choose-by-type>div>img{
+    width: 70px;
+    background-color: rgba(255, 255, 255);
+    border-radius: 15px;
+}
+.lit-of-Products{
+    background-color: rgba(20, 16, 236, 0.644)
+}
+.div_listOfOrder{
     background-color: rgba(165, 42, 42, 0.34);
 }

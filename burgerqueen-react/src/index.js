@@ -4,7 +4,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Inicio from './views/Inicio/Inicio'
 import Login from './views/Inicio/Login'
-import App from './App';
+import AppWaiter from './App';
 import Profile from './views/Waiter/Profile';
 import Order from "./views/Waiter/Order";
 import Home from "./views/Waiter/Home";
@@ -21,7 +21,7 @@ root.render(
     <Routes>
       <Route path='/' element={<Inicio />}></Route>
       <Route path='/Login' element={<Login />}></Route>
-      <Route path='/Waiter/' element={<App />}>
+      <Route path='/Waiter/' element={<AppWaiter />}>
         <Route index element={<Home/>}/>
         <Route path='Profile' element={<Profile />}/>
         <Route path='Order' element={<Order />}/>

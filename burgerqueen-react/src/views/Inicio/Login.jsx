@@ -34,7 +34,7 @@ const LoginForm = () => {
           method: 'POST', // or 'PUT'
           body: JSON.stringify({email, password}),
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json' 
           }
         }).then(res => res.json())
         .then(response => {
@@ -74,7 +74,7 @@ const LoginForm = () => {
     );
 }
  
-// ....
+// .... vista login
 
 function Login() {
   return (

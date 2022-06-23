@@ -1,10 +1,18 @@
 header{
-    background-color: rgb(28, 28, 28);
+    background: #0D0C0C;
     display: grid;
     grid-template-columns: 1fr 2fr;
     color: white;
-    height: 6vh;
+    height: 8vh;
 }
 .logoName{
     display: flex;
+    align-items: center;
+}
+.logowaiter{
+    width: 44px;
+    margin-left: 15px;
+}
+h3{
+    margin-left: 5px;
 }
