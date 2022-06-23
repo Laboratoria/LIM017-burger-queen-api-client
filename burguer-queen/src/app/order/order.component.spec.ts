@@ -32,21 +32,28 @@ describe('OrderComponent', () => {
 });
 
 
-describe('myService', () => {
 
-  beforeEach(() => TestBed.configureTestingModule({
-    imports: [HttpClientTestingModule], 
-    providers: ['']
-  }));
 
-   it('should be created', () => {
-    const service: any = TestBed.get('');
-    expect(service).toBeTruthy();
-   });
+//mock menuservice
+//mock metodo y la respuesta sera: [{item: cafe}, {item: pan}]
 
-   it('should have getData function', () => {
-    const service: any = TestBed.get('');
-    expect(service.getData).toBeTruthy();
-   });
 
-});
+
+// describe('order component', () => {
+
+//   beforeEach(() => TestBed.configureTestingModule({
+//     imports: [HttpClientTestingModule], 
+//     providers: []
+//   }));
+
+//    it('should be created', () => {
+//     const service: any = TestBed.get('');
+//     expect(service).toBeTruthy();
+//    });
+
+//    it('should have getData function', () => {
+//     const service: any = TestBed.get('');
+//     expect(service.getData).toBeTruthy();
+//    });
+
+// });
