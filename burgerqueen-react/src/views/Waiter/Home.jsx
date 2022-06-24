@@ -10,14 +10,13 @@ const Home = () => {
                 <div className='div__buttons'>
                     <div>
                         <button>
-                            Breakfasts 
+                            <p>Breakfasts</p>  
                             <img src={CupOfCofee} className='img-menu' alt='Cup of cofee'/>
                         </button>
-                        
                     </div>
                     <div >
                         <button>
-                            Lunches
+                            <p>Lunches</p> 
                             <img src={burger} className='img-menu' alt='burger-lunch'/>
                         </button>
                         
@@ -29,14 +28,17 @@ const Home = () => {
                         <div>
                             <img src={burgerToSelect} alt='burger'></img>
                             Burgers
+                            <i className="fa-solid fa-circle-play iconHomeView"></i>
                         </div>
                         <div>
                         <img src={burgerToSelect} alt='burger'></img>
                             Extra
+                            <i className="fa-solid fa-circle-play iconHomeView"></i>
                         </div>
                         <div>
                         <img src={burgerToSelect} alt='burger'></img>
                             Drinks
+                            <i className="fa-solid fa-circle-play iconHomeView"></i>
                         </div>
                     </div> 
                     <div className="lit-of-Products">
