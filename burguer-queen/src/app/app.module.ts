@@ -45,6 +45,7 @@ export class AppModule { }
 export interface Order {
   id: any;
   name: string;
+  category: string;
   precio: number;
   cost: string;
   email: string;

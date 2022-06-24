@@ -1,5 +1,8 @@
 <!-- Creando un form para loguearse --> 
 <!-- hay que oculatr el div de verificacion -->
+<!-- <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+</head> -->
 <body>
 <div class="logochef">
     <img src="./assets/img/Chef.svg" alt="logochef">
@@ -7,13 +10,13 @@
 
 <div class="login">
     <form [formGroup]="form" (submit)="onSubmit()">
-        <p  *ngIf="messageError" class="alert alert-danger">Error de logueo {{ messageError }} </p>
-        <p>ECUABURGUER</p>
+        <p  *ngIf="messageError" id="alertmessage" class="alert alert-danger">Error de logueo {{ messageError }} </p><br> 
+        <p class="title">ECUABURGUER</p>
         <label for="newItem"> Correo electrónico </label>
         <input type="text" id="newItem" class="form-control" name="email" formControlName="email"><br> 
         
         <label for="newItem2"> Contraseña</label>
-        <input type="password" id="newItem2" class="form-control"name="password"  formControlName="password">
+        <input type="password" id="newItem2" class="form-control"name="password"  formControlName="password"><br> 
         <input class="btn" type="submit" value="Ingresar">
     </form>
   
