@@ -5,15 +5,18 @@ import { LoginComponentComponent } from './login-component/login-component.compo
 import { OrderComponent } from './order/order.component';
 import { AdminComponent } from './admin/admin.component';
 import { RegisterComponent } from './register/register.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { HomeComponent } from './home/home.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   { path: '',redirectTo: '/home', pathMatch: 'full'},
-  // { path: 'menu', component: AppComponent},
   { path: 'login', component: LoginComponentComponent},
+  { path: 'admin', component: AdminComponent},
   { path: 'waiter', component: OrderComponent},
-  { path: 'admin', component: AdminComponent },
-  { path: 'home', component: AppComponent},
-  { path: 'register', component: RegisterComponent }
+  { path: 'home', component: HomeComponent},
+  { path: 'register', component: RegisterComponent },
+  { path: '**', component: PagenotfoundComponent}
 
 ];
 

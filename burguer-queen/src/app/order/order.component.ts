@@ -13,7 +13,7 @@ export class OrderComponent implements OnInit {
 
  title = 'Ecuaburguer';
   selection!: string;
-  desayunos = [' café americano', 'café con leche', 'sandwich de jamón y queso', 'jugos naturales', 'bolón'];
+  desayunos = [' café americano $1', 'café con leche $2', 'sandwich de jamón y queso $3', 'jugos naturales $2', 'bolón $3'];
   almuerzos = [{
     principal: ['Encebollado', 'Seco de pollo', 'Yapingacho', 'Guatita', 'Hornado'],
     acompanamiento: ['chifle', 'pan', 'arroz'],
@@ -26,16 +26,11 @@ export class OrderComponent implements OnInit {
   bolon = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBWcNVgB_teThKtSOagu97JucD9WDF7RjRDw&usqp=CAU';
 
   constructor(private menuService: MenuService) { }
+  
   ngOnInit(): void {
     this.menuService.getOrder().subscribe((menu) => (this.menu = menu, console.log(menu)));
   }
   
-  // ngOnChanges(changes: SimpleChanges): void {
-  //   console.log('changes ->', changes);
-  // }
-  ngOnDestroy(): void {
-    console.info('destroy')
-  }
   onClick(breakfast: string): void {
     console.log(breakfast);
     this.selection = breakfast;

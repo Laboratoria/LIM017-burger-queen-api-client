@@ -1,1 +1,45 @@
-<p>admin works!</p>
+<h2>ECUABURGUER</h2>
+<!-- <div class="row">
+    <div class="col-md-6">Desayunos</div>
+    <div class="col-md-6">Almuerzos</div>
+</div>
+<button type="button" class="btn btn-success float-end">Editar</button> 
+<button type="button"class="fa-solid fa-trash">Eliminar</button> -->
+
+<table class="table">
+    <thead class="thead dark">
+      <tr>
+    
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Categoria</th>
+        <th scope="col">Costo</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Opciones</th>
+      </tr>
+    </thead>
+    <tbody>
+  
+      <tr *ngFor="let productList of menu">
+        <td>{{productList.id}}</td>
+        <td>{{productList.name}}</td>
+        <td>{{productList.category}}</td>
+        <td>{{productList.cost}}</td>
+        <td>{{productList.precio}}</td>
+        <td>
+        <button type="button"
+         class="btn btn-danger float-end"
+         (click)="onProductDelete('1')"
+         >Delete</button>
+
+          <button type="button" class="btn btn-success float-end">Editar</button>
+      
+      </td>
+      </tr>
+
+    </tbody>
+    <tfoot>
+    </tfoot>
+  </table>
+
+  
