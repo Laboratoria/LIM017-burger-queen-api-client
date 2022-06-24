@@ -3,37 +3,121 @@
         {
             "id": 1,
             "name": "café américano",
-            "categoría": "desayuno",
+            "category": "desayuno",
             "cost": "$ 1",
             "precio": 1
         },
         {
             "id": 2,
             "name": "café con leche",
-            "categoría": "desayuno",
+            "category": "desayuno",
             "cost": "$ 2",
             "precio": 2
         },
         {
             "id": 3,
             "name": "sandwich de jamón y queso",
-            "categoría": "desayuno",
+            "category": "desayuno",
             "cost": "$ 2",
             "precio": 2
         },
         {
             "id": 4,
             "name": "jugos naturales",
-            "categoría": "desayuno",
+            "category": "desayuno",
             "cost": "$ 1",
             "precio": 1
         },
         {
             "id": 5,
             "name": "bolón mixto con huevo",
-            "categoría": "desayuno",
+            "category": "desayuno",
             "cost": "$ 3",
             "precio": 3
+        },
+        {
+            "id": 6,
+            "name": "Encebollado",
+            "category": "almuerzo",
+            "cost": "$ 3",
+            "precio": 3
+        },
+        {
+            "id": 7,
+            "name": "Seco de pollo",
+            "category": "almuerzo",
+            "cost": "$ 2",
+            "precio": 2
+        },
+        {
+            "id": 8,
+            "name": "Yapingacho",
+            "category": "almuerzo",
+            "cost": "$ 3",
+            "precio": 3
+        },
+        {
+            "id": 9,
+            "name": "Guatita",
+            "category": "almuerzo",
+            "cost": "$ 3",
+            "precio": 3
+        },
+        {
+            "id": 10,
+            "name": "Hornado",
+            "category": "almuerzo",
+            "cost": "$ 3",
+            "precio": 3
+        },
+        {
+            "id": 11,
+            "name": "chifle",
+            "category": "acompañamiento",
+            "cost": "$ 1",
+            "precio": 1
+        },
+        {
+            "id": 12,
+            "name": "pan",
+            "category": "acompañamiento",
+            "cost": "$ 1",
+            "precio": 1
+        },
+        {
+            "id": 13,
+            "name": "arroz",
+            "category": "acompañamiento",
+            "cost": "$ 1",
+            "precio": 1
+        },
+        {
+            "id": 14,
+            "name": "gaseosas",
+            "category": "bebidas",
+            "cost": "$ 2",
+            "precio": 2
+        },
+        {
+            "id": 15,
+            "name": "agua",
+            "category": "bebidas",
+            "cost": "$ 1",
+            "precio": 1
+        },
+        {
+            "id": 16,
+            "name": "cerveza",
+            "category": "bebidas",
+            "cost": "$ 3",
+            "precio": 1
+        },
+        {
+            "id": 17,
+            "name": "té helado",
+            "category": "bebidas",
+            "cost": "$ 1",
+            "precio": 1
         }
     ],
     "auth": [

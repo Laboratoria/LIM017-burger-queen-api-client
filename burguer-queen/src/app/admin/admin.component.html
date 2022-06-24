@@ -1,4 +1,4 @@
-<h2>PRODUCTOS ECUABURGUER</h2>
+<h2>ECUABURGUER</h2>
 <!-- <div class="row">
     <div class="col-md-6">Desayunos</div>
     <div class="col-md-6">Almuerzos</div>
@@ -13,42 +13,33 @@
         <th scope="col">Id</th>
         <th scope="col">Name</th>
         <th scope="col">Categoria</th>
-        <th scope="col">Precio</th>
+        <th scope="col">Costo</th>
         <th scope="col">Cantidad</th>
         <th scope="col">Opciones</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let product of menu "  >
-        <td>{{product.id}}</td>
-        <td>{{product.name}}</td>
-        <!-- <td>{{product.categoría}}</td> -->
-        <td>{{product.cost}}</td>
-        <td>{{product.precio}}</td>
+  
+      <tr *ngFor="let productList of menu">
+        <td>{{productList.id}}</td>
+        <td>{{productList.name}}</td>
+        <td>{{productList.category}}</td>
+        <td>{{productList.cost}}</td>
+        <td>{{productList.precio}}</td>
+        <td>
+        <button type="button"
+         class="btn btn-danger float-end"
+         (click)="onProductDelete('1')"
+         >Delete</button>
+
+          <button type="button" class="btn btn-success float-end">Editar</button>
+      
+      </td>
       </tr>
-      <tr>
-        <td>February</td>
-        <td>$80</td>
-      </tr>
+
     </tbody>
     <tfoot>
-      <tr>
-        <td>Sum</td>
-        <td>$180</td>
-      </tr>
     </tfoot>
   </table>
 
-  <div class="col-md-4">
-    <div class="http" *ngFor="let product of menu " > 
-      <!-- //posible cambiar a tabla -->
-      <ul class="list-group">
-        <li class="list-group-item">
-          {{product.id}} 
-          {{product.name}} 
-          {{product.cost}}
-          {{product.precio}} 
-        <button type="button" class="btn btn-danger float-end">Delete</button> 
-        </li>
-      </ul>
-      </div>
+  
