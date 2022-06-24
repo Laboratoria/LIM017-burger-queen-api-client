@@ -3,30 +3,35 @@
         {
             "id": 1,
             "name": "café américano",
+            "categoría": "desayuno",
             "cost": "$ 1",
             "precio": 1
         },
         {
             "id": 2,
             "name": "café con leche",
+            "categoría": "desayuno",
             "cost": "$ 2",
             "precio": 2
         },
         {
             "id": 3,
             "name": "sandwich de jamón y queso",
+            "categoría": "desayuno",
             "cost": "$ 2",
             "precio": 2
         },
         {
             "id": 4,
             "name": "jugos naturales",
+            "categoría": "desayuno",
             "cost": "$ 1",
             "precio": 1
         },
         {
             "id": 5,
             "name": "bolón mixto con huevo",
+            "categoría": "desayuno",
             "cost": "$ 3",
             "precio": 3
         }

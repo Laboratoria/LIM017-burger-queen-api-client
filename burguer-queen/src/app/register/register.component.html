@@ -1,12 +1,12 @@
 <body>
     <div class="logoRegister">
-           <img src="./assets/img/Waiters.svg">
+           <img  src="./assets/img/Waiters.svg" alt="waiterRegister" class="regImg">
     </div>
     
-    <div class="Register">
+    <div class="register">
         <form [formGroup]= "form"(submit)="onSubmitInRegister()" ><br> 
             <p>ECUABURGUER</p>
-            <p *ngIf="messageError" class="alert alert-danger"> Error {{messageError}} al registrarse</p>
+            <p *ngIf="messageError" class="alert alert-danger" id= "alertmessage"> Error {{messageError}} al registrarse</p>
             <!-- <p *ngIf="messageInfo"  class="alert-info"> Registro exitoso, redireccionando al login!</p> -->
          
             <label for="newItem"> Correo electrónico </label>
@@ -17,6 +17,7 @@
             <!-- <div [hidden]="newItem.valid  || newItem.pristine" class="alert alert-danger">Contraseña inválida</div><br>   -->
             <input class="btn" type="submit" value="Ingresar">
         </form>
-        <a routerLink="/login">Inicia Sesión</a>
+        
+       <br> <a routerLink="/login">Inicia Sesión</a>
     </div> 
     </body>

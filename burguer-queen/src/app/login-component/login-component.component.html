@@ -5,7 +5,7 @@
 </head> -->
 <body>
 <div class="logochef">
-    <img src="./assets/img/Chef.svg">
+    <img src="./assets/img/Chef.svg" alt="logochef">
 </div>
 
 <div class="login">
@@ -19,16 +19,7 @@
         <input type="password" id="newItem2" class="form-control"name="password"  formControlName="password"><br> 
         <input class="btn" type="submit" value="Ingresar">
     </form>
-    <!-- <form (ngSubmit)="onSubmit(loginForm.value)" #loginForm = "ngForm"><br> 
-        <p>ECUABURGUER</p>
-        <label for="newItem"> Correo electrónico </label>
-        <input type="text" id="newItem" class="form-control" name="email" #name="ngModel" ngModel required=""><br> 
-        <div [hidden]="name.valid  || name.pristine" class="alert alert-danger">Correo inválido</div>    
-        <label for="newItem2"> Contraseña</label>
-        <input type="password" id="newItem2" class="form-control"name="password"  #newItem="ngModel" ngModel required>
-        <div [hidden]="newItem.valid  || newItem.pristine" class="alert alert-danger">Contraseña inválida</div><br>  
-        <input class="btn" type="submit" value="Ingresar"[disabled]="loginForm.invalid">
-    </form> -->
-    <a routerLink="/home">Regresar al Home</a>
+  
+  <br>  <a routerLink="/home">Regresar al Home</a>
 </div> 
 </body>

@@ -26,16 +26,11 @@ export class OrderComponent implements OnInit {
   bolon = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBWcNVgB_teThKtSOagu97JucD9WDF7RjRDw&usqp=CAU';
 
   constructor(private menuService: MenuService) { }
+  
   ngOnInit(): void {
     this.menuService.getOrder().subscribe((menu) => (this.menu = menu, console.log(menu)));
   }
   
-  // ngOnChanges(changes: SimpleChanges): void {
-  //   console.log('changes ->', changes);
-  // }
-  ngOnDestroy(): void {
-    console.info('destroy')
-  }
   onClick(breakfast: string): void {
     console.log(breakfast);
     this.selection = breakfast;
