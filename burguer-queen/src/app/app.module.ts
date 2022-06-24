@@ -49,6 +49,7 @@ export interface Order {
   cost: string;
   email: string;
   password: string;
+  image: any;
 }
 
 
