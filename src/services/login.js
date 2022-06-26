@@ -1,7 +1,7 @@
 import axios from 'axios';
-import {urlBase} from '../config'
+import {urlBaseAuth} from '../config'
 
-const urlLogin = `${urlBase}/login`
+const urlLogin = `${urlBaseAuth}/login`
 
 export const login = (email, password) => {
   const data = {

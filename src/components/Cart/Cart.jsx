@@ -22,7 +22,20 @@ export const Cart= () => {
     (previous, current) => previous + current.qty * current.price,
     0
   );
-
+    const data = {
+      userId: 1,
+      client: "",
+      products: [
+        {
+          productId: 1,
+          qty: 2
+        },
+        {
+          productId: 2,
+          qty: 6
+        }
+      ]
+    }
   return(
   <div className={style.cartContainer}>
     <div onClick={() => {
