@@ -1,15 +1,26 @@
 import React from 'react';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { CartContext } from '../Context/CartContext';
-import {ProductsData} from '../Data/ProductsData'
 import style from './style.css'
+import { getProducts } from '../../services/products'
 
 export const Products = () => {
   const {addItemToCart} = useContext(CartContext)
+  const [products, setProducts] = useState([])
+
+  useEffect(()=>{
+    console.log('Use Effect')
+    getProducts()
+      .then((response)=>{
+        setProducts(response.data)
+      })
+      .catch((err)=> console.log(err))
+  }, [])
+
 
   return (
   <div className={style.productsContainer}>
-   {ProductsData.map((product, i) => (
+   {products.map((product, i) => (
    <div key={i} className={style.product}>
     <img src={product.image} alt={product.name}/>
     <div>

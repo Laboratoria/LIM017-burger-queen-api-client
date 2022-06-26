@@ -5,7 +5,7 @@ export const ProductsData = [
     price: 73,
     image: "https://cmslogistics.es/134-thickbox_default/hamburguesa-de-buey-200-gr.jpg",
     id: 1,
-    amount: 0
+    qty: 0
   },
   {
     createdAt: "2022-06-18T03:52:36.967Z",
@@ -13,7 +13,7 @@ export const ProductsData = [
     price: 34,
     image: "https://cmslogistics.es/134-thickbox_default/hamburguesa-de-buey-200-gr.jpg",
     id: 2,
-    amount: 0
+    qty: 0
   },
   {
     createdAt: "2022-06-18T09:28:57.373Z",
@@ -21,7 +21,7 @@ export const ProductsData = [
     price: 25,
     image: "http://loremflickr.com/640/480/food",
     id: 3,
-    amount: 0
+    qty: 0
   },
   {
     createdAt: "2022-06-18T08:25:00.247Z",
@@ -29,7 +29,7 @@ export const ProductsData = [
     price: 35,
     image: "http://loremflickr.com/640/480/food",
     id: 4,
-    amount: 0
+    qty: 0
   },
   {
     createdAt: "2022-06-18T21:32:45.850Z",
@@ -37,7 +37,7 @@ export const ProductsData = [
     price: 59,
     image: "http://loremflickr.com/640/480/food",
     id: 5,
-    amount: 0
+    qty: 0
   },
   {
     createdAt: "2022-06-18T09:55:18.298Z",
@@ -45,7 +45,7 @@ export const ProductsData = [
     price: 51627,
     image: "http://loremflickr.com/640/480/food",
     id: 6,
-    amount: 0
+    qty: 0
   },
   {
     createdAt: "2022-06-18T17:01:16.313Z",
@@ -53,7 +53,7 @@ export const ProductsData = [
     price: 26,
     image: "http://loremflickr.com/640/480/food",
     id: 7,
-    amount: 0
+    qty: 0
   },
   
 ]

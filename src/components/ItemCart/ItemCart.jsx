@@ -20,8 +20,8 @@ export const ItemCart = ({item}) => {
             </div>
         </div>
         <div className={style.right}>
-            <div>{item.amount}</div>
-            <p> Total: ${item.amount * item.price}</p>
+            <div>{item.qty}</div>
+            <p> Total: ${item.qty * item.price}</p>
         </div>
      </div>  
     </div>
