@@ -31,7 +31,7 @@ const [cartItems, setCartItems] = useState(() => {
                 })
         );
     } else {
-        setCartItems([...cartItems, {...product, qyt: 1}])
+        setCartItems([...cartItems, {...product, qty: 1}])
     }};
 
     const deleteItemToCart = (product) => {

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import {urlBase} from '../config'
 
+
 const urlProducts = `${urlBase}/products`
 
 export const createProduct = (data)=>{
