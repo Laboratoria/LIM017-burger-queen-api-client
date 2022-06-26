@@ -6,7 +6,7 @@ import { Button } from '../Button/Button';
 import style from './style.css'
 import { Error } from '../Error/Error';
 
-const baseUrl = 'https://62a93a2bec36bf40bdb47203.mockapi.io/users';
+const baseUrl = 'http://restapi.adequateshop.com/api/authaccount/login';
 const cookies = new Cookies();
 
 export function Login(){
@@ -21,34 +21,52 @@ export function Login(){
  const [error, setError] = useState(false);
  const [inputName, setInputName] = useState('');
 
- const onSubmitHandler = async (e) =>{
+ const onSubmitHandler =  (e) =>{
   e.preventDefault()
-  await axios.get(baseUrl, {params:{email:user.email, password:user.password}})
-    .then(response =>{
-      const data = response.data;
-
-      if(data.length>0){
-        let respuesta = data[0];
-        cookies.set('id', respuesta.id, {path:'/'})
-        cookies.set('email', respuesta.email, {path:'/'})
+  // const config ={ headers: {"Access-Control-Allow-Origin": "*"}};
+  const dataPost = {email:user.email, password:user.password}
+  axios.post(baseUrl, dataPost )
+  .then(response =>{
+    const data = response.data;
+    console.log(response);
+    if(response.status == 200 && data.code == 0){
+      // let respuesta = data[0];
+      cookies.set('token', data.data.Token, {path:'/'})
+      cookies.set('email', user.email, {path:'/'})
 
         navigate('/home');
     
-      }else{
-        setError(true);
-        // alert('El usuario o la contraseña no son correctas')
-      }
-      // setError(false)
+    }else{
+          
+      setError(true);
+      // alert('El usuario o la contraseña no son correctas')
+    }
+    // setError(false)
+      })
+      .catch(error =>{
+        console.log(error)
+        // if(error.message === "Request failed with status code 400"){
+          //   console.log('introduce email y password')
+          // }
     })
-    .catch(error =>{
-      console.log(error)
-    })
+ };
+ const [errorMessage, setErrorMessage] = useState();
+ const handlerError = (e) =>{
+  setErrorMessage({
+    
+    // let emailError;
+    // if(errorMessage === "Request failed with status code 400"){
+    //    <Error message='El usuario o la contraseña no son correctas' />
+    //  }
+  
+  })
  }
-
+ 
   const handlerUser = (e) =>{
     e.preventDefault()
     setUser({
-      [e.target.name]:[e.target.value]
+      ...user,
+      [e.target.name]:e.target.value
     })
   }
 
@@ -69,12 +87,6 @@ export function Login(){
   //   component = null;
   // }
 
-  let emailError;
-  if(error && !user.email){
-    emailError= <Error message='El usuario o la contraseña no son correctas' />
-   }else{
-    emailError = null;
-   }
 
   //  let passError;
   // if(error && !user.password){
@@ -116,7 +128,7 @@ export function Login(){
         <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Ingresar contraseña" name="password" onInput={handlerUser}/>
       </div>
       <div className='passInvalid'>
-         {emailError} 
+         {/* {emailError}  */}
       </div>
       <div className="loginButton">
       <Button onClick={onSubmitHandler} className="btn btn-warning btn-lg" type="submit" name="Iniciar Sesión"></Button>
