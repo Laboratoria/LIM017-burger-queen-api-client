@@ -53,6 +53,12 @@ export interface Order {
   email: string;
   password: string;
   image: any;
+  price: number;
+  type: string;
+  dataEntry: any;
+  products: any;
+  client: string;
+  status: string;
 }
 
 

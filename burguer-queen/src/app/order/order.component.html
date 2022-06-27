@@ -59,8 +59,14 @@
         <!-- //posible cambiar a tabla -->
         <ul class="list-group">
           <li class="list-group-item">
-            {{product.name}} 
-            {{product.cost}}
+            {{product.client}} 
+            {{product.id}}
+            {{product.status}}
+            {{product.dataEntry}}
+            {{ product.products[0].product.name}}
+            {{ product.products[0].product.price}}
+            {{ product.products[0].product.type}}
+            <img src="  {{ product.products[0].product.image}}" alt="">
             <img src="{{product.image}}" alt="">
           <button type="button" class="btn btn-danger float-end">Delete</button> 
           </li>

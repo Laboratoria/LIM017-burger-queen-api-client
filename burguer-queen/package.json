@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serverAPI": "json-server --port3000 --watch restData.json"
+    "serverAPI": "json-server --port8080 --watch db.json"
   },
   "private": true,
   "dependencies": {

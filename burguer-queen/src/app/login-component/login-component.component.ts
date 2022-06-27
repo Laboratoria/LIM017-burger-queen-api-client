@@ -33,7 +33,7 @@ export class LoginComponentComponent implements OnInit {
 
 
   onSubmit() {
-    this.menuService.addUsers('http://localhost:3001/auth',
+    this.menuService.addUsers('https://virtserver.swaggerhub.com/ssinuco/BurgerQueenAPI/2.0.0/login',
       {
         email: this.form.value.email,
         password: this.form.value.password

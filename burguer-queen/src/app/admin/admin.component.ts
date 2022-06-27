@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Order } from '../app.module';
 import { MenuService } from '../services/menu.service';
 
+
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -15,16 +16,17 @@ export class AdminComponent implements OnInit {
   @Input() selection!: Order;
   @Output() updateEvent = new EventEmitter<Order>();
 
+
   constructor(private menuService: MenuService, 
-    public builder: FormBuilder ) { }
+    public formBuilder: FormBuilder ) { }
 
   ngOnInit(): void {
-    // this.menuService.getOrder().subscribe((menu) => (this.menu = menu, console.log(menu))),
-    this.form = this.builder.group({
-      name: ['', [Validators.required, Validators.name]],
-      precio: ['', Validators.required],
+  this.menuService.getOrder().subscribe((menu) => (this.menu = menu, console.log(menu))),
+    this.form = this.formBuilder.group({
+      name: ['', Validators.required],
       category: ['', Validators.required],
-      cost: ['', Validators.required]
+      cost: ['', Validators.required],
+      precio: ['', Validators.required]
     })
   }
  
@@ -54,22 +56,24 @@ export class AdminComponent implements OnInit {
   }
 
   onUpdateInfo ( item: Order, change:string): void{
-console.log(item, change)
+  console.log(item, change)
     // this.updateEvent.emit(item);
   }
-  addProduct():void{
-    this.menuService.addUsers('http://localhost:3001/desayunos',{
-      name: this.form.value.name,
+  addProduct( ):void{
+    console.log(this.form.value)
+    this.menuService.addUsers('https://virtserver.swaggerhub.com/ssinuco/BurgerQueenAPI/2.0.0/products',
+    {  
+    name: this.form.value.name,
       precio: this.form.value.precio,
       category: this.form.value.category,
-      cost: this. form.value.cost
-    })
+      cost: this.form.value.cost
+    }) 
     .subscribe({
-      next:res => {
+      next: res => {
         console.info(res)
       },
       error: error => {
-        console.error(error.sta)
+        console.error(error.status)
       }
     })
   

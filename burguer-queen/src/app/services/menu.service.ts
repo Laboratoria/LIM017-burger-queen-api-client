@@ -7,7 +7,7 @@ import { Order } from '../app.module';
   providedIn: 'root'
 })
 export class MenuService {
-  private apiUrl = 'http://localhost:3000/menu';
+  private apiUrl = 'https://virtserver.swaggerhub.com/ssinuco/BurgerQueenAPI/2.0.0/orders';
  
 
   constructor(private http: HttpClient) { }
