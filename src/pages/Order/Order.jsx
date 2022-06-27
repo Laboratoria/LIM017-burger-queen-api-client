@@ -6,7 +6,8 @@ import {
 import { useState } from "react";
 import { useEffect } from "react";
 import { getOrder } from "../../services/orders";
-export const OrderCook = ()=>{
+
+export const Order = ()=>{
   const {id} = useParams()
   const [order, setOrder] = useState({})
   useEffect(()=>{
@@ -16,25 +17,18 @@ export const OrderCook = ()=>{
       })
       .catch(err => console.log(err))
   }, [])
-  return(
-    <div className="OrderCookContainer">
+  return (order) &&
+    (<div className="OrderCookContainer">
       <p className="OrderTableTitle">#{order.id}</p>
       <div className="OrderInfContainer">
         <div className="OrderInf">
-          <label htmlFor="" className="label">Cliente:</label>
-          <input type="text" className="input"/>
+          <h4>Cliente: <small>{order.client}</small></h4>
         </div>
         <div className="OrderInf">
-          <label htmlFor="" className="label">Orden:</label>
-          <input type="text" className="input"/>
-        </div>
-        <div className="OrderInf">
-          <label htmlFor="" className="label">Hora:</label>
-          <input type="text" className="input"/>
+          <h5>Hora: <small>{order.dataEntry}</small></h5>
         </div>
       </div>
-      <CookCard></CookCard>
-    </div>
-    
-  )
+      <CookCard orderLines={order.products}></CookCard>
+    </div>)
+
 }
