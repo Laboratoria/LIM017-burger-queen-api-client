@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponentComponent},
   { path: 'admin', component: AdminComponent,
   children: [ 
-    {path:"employee",component: EmployeesComponent} 
+    {path:"employees",component: EmployeesComponent} 
   ]
 },
   { path: 'waiter', component: OrderComponent},
