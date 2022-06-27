@@ -5,11 +5,29 @@
 </div>
 <button type="button" class="btn btn-success float-end">Editar</button> 
 <button type="button"class="fa-solid fa-trash">Eliminar</button> -->
+<div class="postProduct">
+<form [formGroup]="form" (submit)="addProduct()">
+    <p  id="alertmessage" class="alert alert-danger"> </p><br> 
+    <p class="addProduct">Agrega un nuevo producto al menú</p>
+    <label for="name">Nombre</label>
+    <input type="text" id="name" name="name" formControlName="name"> 
+    <label for="category">Categoria</label>
+    <input type="text" id="category" name="category" formControlName="category"> 
+    <label for="cost">Costo</label>
+    <input type="text" name="cost" id="cost" formControlName="cost"> 
+    <label for="precio">Precio</label>
+    <input type="text" name="precio" id="precio" formControlName="precio"> 
 
+    <input type="submit" value="Crear nuevo producto">
+</form>
+</div>
+<div>
+ <a routerLink="employees">Gestión de empleados</a>   
+</div>
 <table class="table">
+   
     <thead class="thead dark">
-      <tr>
-    
+        <tr>
         <th scope="col">Id</th>
         <th scope="col">Name</th>
         <th scope="col">Categoria</th>
@@ -18,21 +36,25 @@
         <th scope="col">Opciones</th>
       </tr>
     </thead>
-    <tbody>
-  
-      <tr *ngFor="let productList of menu">
+    <tbody >
+        <tr *ngFor="let productList of menu" 
+        [ngClass]=  "{'active': productList?.id=== selection?.id}">
         <td>{{productList.id}}</td>
         <td>{{productList.name}}</td>
         <td>{{productList.category}}</td>
         <td>{{productList.cost}}</td>
         <td>{{productList.precio}}</td>
         <td>
-        <button type="button"
+        <button 
+        type="button"
          class="btn btn-danger float-end"
-         (click)="onProductDelete('1')"
+         (click)="onProductDelete(productList?.id)"
          >Delete</button>
-
-          <button type="button" class="btn btn-success float-end">Editar</button>
+          <button 
+          type="button" 
+          class="btn btn-success float-end"
+          >Editar
+        </button>
       
       </td>
       </tr>
@@ -41,5 +63,5 @@
     <tfoot>
     </tfoot>
   </table>
-
+<router-outlet></router-outlet>
   

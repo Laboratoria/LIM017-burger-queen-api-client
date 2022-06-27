@@ -8,7 +8,7 @@ import { Order } from '../app.module';
 })
 export class MenuService {
   private apiUrl = 'http://localhost:3000/menu';
-  //private url = 'http://localhost:3001/auth'
+ 
 
   constructor(private http: HttpClient) { }
 
@@ -21,15 +21,18 @@ export class MenuService {
     return this.http.post(url, body)
   }
 
-  // addUsers(email: string, password: string): Observable<Order[]> {
-  //   const body = { email: email, password: password }
-  //   return this.http.post<Order[]>(this.endPoint1, body);
-  // }
+  deleteProduct(id: string): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`)
+  }
 
-
-  // delete$ = this.http.delete('http://localhost:3000/menu');
-  // deleteOrder(menu: Order): Observable<Order> {
-  //   const url = `${this.apiUrl}/${menu.id}`;
-  //   return this.http.delete<Order>(url);
-  // }
+  update( menu: Order): Observable<void> {
+    const body = {
+      name: menu.name,
+      category : menu.category,
+      cost: menu.cost,
+      precio: menu.precio,
+      image: menu.image
+    }
+    return this.http.put<void>(`${this.apiUrl}/${menu.id}`, body)
+  }
 }

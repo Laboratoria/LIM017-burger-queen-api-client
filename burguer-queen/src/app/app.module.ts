@@ -13,6 +13,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { HomeComponent } from './home/home.component';
 import { MenuService } from './services/menu.service';
 import { AuthGuard } from './auth/auth.guard';
+import { EmployeesComponent } from './employees/employees.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AuthGuard } from './auth/auth.guard';
     RegisterComponent,
     NavbarComponent,
     PagenotfoundComponent,
-    HomeComponent
+    HomeComponent,
+    EmployeesComponent
   ],
   imports: [
     BrowserModule,
