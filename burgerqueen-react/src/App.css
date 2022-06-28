@@ -3,7 +3,7 @@ header{
     display: grid;
     grid-template-columns: 1fr 2fr;
     color: white;
-    height: 7vh;
+    height: 8vh;
 }
 .logoName{
     display: flex;

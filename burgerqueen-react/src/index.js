@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Inicio from './views/Inicio/Inicio'
-import Login from './views/Inicio/Login'
+import Login from './views/Inicio/Login';
+import HomeAdmin from './views/Admin/Home'
 import AppWaiter from './App';
 import Profile from './views/Waiter/Profile';
 import Order from "./views/Waiter/Order";
-import Home from "./views/Waiter/Home";
+import HomeWaiter from "./views/Waiter/Home";
 import PageNotFound from "./views/Waiter/PageNotFound";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -22,14 +23,14 @@ root.render(
       <Route path='/' element={<Inicio />}></Route>
       <Route path='/Login' element={<Login />}></Route>
       <Route path='/Waiter/' element={<AppWaiter />}>
-        <Route index element={<Home/>}/>
+        <Route index element={<HomeWaiter/>}/>
         <Route path='Profile' element={<Profile />}/>
         <Route path='Order' element={<Order />}/>
         <Route path='*' element={<PageNotFound />}/>
       </Route>
+      <Route path='/Admin' element={<HomeAdmin/>}></Route>
     </Routes>
-  </BrowserRouter>,
-  //document.getElementById('root')
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
