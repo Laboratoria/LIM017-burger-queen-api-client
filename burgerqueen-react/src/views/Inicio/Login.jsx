@@ -14,7 +14,7 @@ const request = ({email, password}, url) => new Promise ((resolve, reject) =>{
     }
   })
   .then(res => res.json())
-  .then(response => resolve(response.token))
+  .then(response => resolve(response))
   .catch(error => reject(error))
 })
 
@@ -26,18 +26,21 @@ const LoginForm = () => {
   const {register, formState: { errors }, handleSubmit} = useForm();
 
   const onSubmit = (data, event) => {
-        const url = 'http://localhost:3001/auth';
+        const url = 'http://localhost:8080/login';
         const {email, password} = data;
         console.log({email, password});
         request({email, password}, url)
         .then((res) => {
-          if (res !== undefined){
+          // console.log('aqui esta consoleando el res', res)
+          if (res.accessToken !== undefined){
             return navigate('/Waiter')
-          } else{
-            return console.log("Error 400", res)
-          }
-
+          } else if(res === 'Cannot find user'){
+            return 'Incorrect User'
+          } else if(res === 'Incorrect password'){
+            return res
+          }return console.log(res)
         })
+
         .catch((error) => console.log(error.message))      
 
         event.target.reset();
@@ -57,14 +60,14 @@ const LoginForm = () => {
                         {...register('email',{
                           required: {
                               value: true, 
-                              message: 'Email is required'
+                              message: '⚠️ Email is required'
                               } 
                       })}
                       />
-                      <span className="text-danger text-small d-block mb-2">
+                    </div>
+                      <span className='spanLogin'>
                         {errors?.email?.message}
                       </span>
-                    </div>
                   </label>
                 </div>
                 <div className="col-md-3">
@@ -80,29 +83,29 @@ const LoginForm = () => {
                         {...register('password',{
                           required: {
                               value: true, 
-                              message: 'Password is required'
+                              message: '⚠️ Password is required'
                               }, 
                           maxLength: {
-                              value: 30, 
-                              message: 'No more than 30 characteres!'
+                              value: 200, 
+                              message: '⚠️ No more than 30 characteres!'
                               },
                           minLength: {
                               value: 6, 
-                              message: 'At least 6 characteres!'
+                              message: '⚠️ At least 6 characteres!'
                               }
                       })}
                       />
-                      <span className="text-danger text-small d-block mb-2">
+                    </div>
+                      <span className='spanLogin'>
                         {errors?.password?.message}
                       </span>
-                    </div>
                   </label>
                 </div>
                 <button type="submit" className="btn-primary">Login</button>
             </form>
     );
 }
- 
+
 // .... vista login
 
 function Login() {
