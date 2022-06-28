@@ -1,15 +1,18 @@
 .cookContainer{
-  width: 90%;
+  width: 100%;
+  max-width: 500px;
   height: 100vh;
-  margin: 10px auto;
+  margin: 10px auto; 
+  padding: 10px;
   /* display: flex;
   flex-direction: column;
   align-items: center; */
 }
 .cookTitle{
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
   color: #333;
+  font-family: 'Montserrat', sans-serif;
 
 }
 .cardContainer{

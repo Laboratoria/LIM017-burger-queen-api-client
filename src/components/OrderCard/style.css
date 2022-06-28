@@ -8,3 +8,15 @@
   margin-bottom: 20px;
   border: 1px solid #333;
 }
+.OrderTitle{
+  font-size: 20px;
+  font-weight: bold;
+}
+.State{
+  width: 100px;
+  height: 30px;
+  background-color: green;
+  font-weight: bold;
+  color: white;
+  padding-left: 2px;
+}

@@ -19,13 +19,13 @@ export const Order = ()=>{
   }, [])
   return (order) &&
     (<div className="OrderCookContainer">
-      <p className="OrderTableTitle">#{order.id}</p>
+      <p className="OrderTableTitle">Orden #{order.id}</p>
       <div className="OrderInfContainer">
         <div className="OrderInf">
-          <h4>Cliente: <small>{order.client}</small></h4>
+          <h4 className="Order">Cliente: <smal>{order.client}</smal></h4>
         </div>
         <div className="OrderInf">
-          <h5>Hora: <small>{order.dataEntry}</small></h5>
+          <h5 h4 className="Order">Hora: <small>{order.dataEntry}</small></h5>
         </div>
       </div>
       <CookCard orderLines={order.products}></CookCard>

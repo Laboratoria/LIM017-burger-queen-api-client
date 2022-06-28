@@ -16,6 +16,7 @@ export const OrderCard = ({order}) =>{
       <div className="OrderCardContainer">
         <p className="OrderTitle">#{order.id}</p>
         <Button onClick={onSubmitHandler} type='submit' className="btn btn-warning btn-sm" name="Ver Pedido">Ver Pedido</Button>
+        <div className='State'>Por preparar</div>
     </div>
   )
 }

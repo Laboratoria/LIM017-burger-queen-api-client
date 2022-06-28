@@ -1,28 +1,36 @@
 .onboardingContainer{
     width: 100vw;
     height: 100vh;
-    background-image: linear-gradient(0, #ffe951 0, #ffdd50 8.33%, #ffce51 16.67%, #ffbf52 25%, #ffae53 33.33%, #ff9c53 41.67%, #f28953 50%, #e17852 58.33%, #d06951 66.67%, #c25c51 75%, #b55252 83.33%, #aa4a53 91.67%, #a04455 100%);
+    padding: 16px;
+    /* background-image: linear-gradient(0, #ffe951 0, #ffdd50 8.33%, #ffce51 16.67%, #ffbf52 25%, #ffae53 33.33%, #ff9c53 41.67%, #f28953 50%, #e17852 58.33%, #d06951 66.67%, #c25c51 75%, #b55252 83.33%, #aa4a53 91.67%, #a04455 100%); */
+    background-image: url('../../img/rockBurger.jpg');
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+
 }
 
-.welcomeContainer {
+/* .welcomeContainer {
      background-color: #242424;
      width: 80%;
      height: 40%;
      margin: auto;
-}
+} */
    
 .titleOnboarding{     
      font-family: 'Fredoka One', sans-serif;
-     color: #ffffff;
+     color: #333;
      font-size: 3em;
      text-align: center;
-     padding-top: 20%;
+     padding-top: 10%;
 }
 
 .btnContainer{
+  height: 430px;
   display: flex;
+
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
 }
 /* 
 img{
