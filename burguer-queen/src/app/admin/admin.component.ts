@@ -15,7 +15,8 @@ export class AdminComponent implements OnInit {
   @Output() productDeleteEvent = new EventEmitter<string>();
   @Input() selection!: Order;
   @Output() updateEvent = new EventEmitter<Order>();
-
+  @Output() newItemEvent = new EventEmitter<string>();
+  @Input() className = 'btn-primary';
 
   constructor(private menuService: MenuService, 
     public formBuilder: FormBuilder ) { }
@@ -47,35 +48,41 @@ export class AdminComponent implements OnInit {
 
   UpdateInfo(menu: Order):void{
     this.menuService.update(menu)
-    .subscribe(
-      res => {
-        const productArray = this.menu.filter( product => product.id !== menu.id );
-        this.menu= [...productArray, menu]
-      }
-    )
+    .subscribe({
+    next:res => {
+      const productArray = this.menu.filter( product => product.id !== menu.id );
+      this.menu= [...productArray, menu],
+      console.log(res)
+    },
+    error: error => {
+      console.log(error)
+    }  
+    })
   }
 
   onUpdateInfo ( item: Order, change:string): void{
-  console.log(item, change)
-    // this.updateEvent.emit(item);
-  }
-  addProduct( ):void{
-    console.log(this.form.value)
-    this.menuService.addUsers('https://virtserver.swaggerhub.com/ssinuco/BurgerQueenAPI/2.0.0/products',
-    {  
-    name: this.form.value.name,
-      precio: this.form.value.precio,
-      category: this.form.value.category,
-      cost: this.form.value.cost
-    }) 
-    .subscribe({
-      next: res => {
-        console.info(res)
-      },
-      error: error => {
-        console.error(error.status)
-      }
-    })
+  console.log(item);
+  console.log( change);
   
+     this.updateEvent.emit(item);
   }
+  // addProduct( ):void{
+  //   console.log(this.form.value)
+  //   this.menuService.addUsers('https://virtserver.swaggerhub.com/ssinuco/BurgerQueenAPI/2.0.0/products',
+  //   {  
+  //   name: this.form.value.name,
+  //     precio: this.form.value.precio,
+  //     category: this.form.value.category,
+  //     cost: this.form.value.cost
+  //   }) 
+  //   .subscribe({
+  //     next: res => {
+  //       console.info(res)
+  //     },
+  //     error: error => {
+  //       console.error(error.status)
+  //     }
+  //   })
+  
+  // }
 }

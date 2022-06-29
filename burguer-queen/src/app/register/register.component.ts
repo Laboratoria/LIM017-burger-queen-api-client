@@ -26,27 +26,27 @@ export class RegisterComponent implements OnInit {
       }
     )
   }
-  onSubmitInRegister(){
-    this.menuService.addUsers('http://localhost:3001/auth',
-    {
-      email: this.form.value.email,
-      password: this.form.value.password
-    })
-    .subscribe({
-      next: res => { 
-        setTimeout(() => {
-         this.router.navigate(['/login'])
-       }, 1000)
+  // onSubmitInRegister(){
+  //   this.menuService.addUsers('http://localhost:3001/auth',
+  //   {
+  //     email: this.form.value.email,
+  //     password: this.form.value.password
+  //   })
+  //   .subscribe({
+  //     next: res => { 
+  //       setTimeout(() => {
+  //        this.router.navigate(['/login'])
+  //      }, 1000)
        
 
-       console.info(res)
-     },
-     error: error => {
-       this.messageError = error.status;
-     }
-    });
+  //      console.info(res)
+  //    },
+  //    error: error => {
+  //      this.messageError = error.status;
+  //    }
+  //   });
     //es como un evento y vamos a capturar valores y asignarlos a:
     
-  }
+  // }
 
 }

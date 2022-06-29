@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { MenuService } from './services/menu.service';
 import { AuthGuard } from './auth/auth.guard';
 import { EmployeesComponent } from './employees/employees.component';
+import { ResolveStart } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,27 @@ export interface Order {
   client: string;
   status: string;
 }
+export interface LoginResponse {
+  accessToken: string;
+}
 
+export interface User {
+  id: string;
+  email: string;
+  roles: Roles;
+ 
+
+}
+
+export interface Roles {
+  admin: boolean;
+  waiter: boolean;
+
+}
+export interface Credentials {
+  email: string;
+  password: string;
+  id?: any;
+}
 
 
