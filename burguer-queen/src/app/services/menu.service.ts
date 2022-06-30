@@ -70,12 +70,16 @@ export class MenuService {
     return this.http.post<LoginResponse>(`${this.urlUser}login`, credentials)
   }
   
-
-  //obtener usuarios
+//obtener usuarios 
+//   getAllUsers(user: any)<User>{
+//     return this.http.get<User>(`${this.urlUser}users`, this.httpOptions())
+//  }
+  //obtener usuarios por id
   getUser(loginResponse: any): Observable<User> {
 
     return this.http.get<User>(`${this.urlUser}users/${loginResponse.user.id}`, this.httpOptions())
   }
+  
 
   //obtener productos
   getProduct(): Observable<Order[]> {
@@ -95,13 +99,14 @@ export class MenuService {
     return this.http.delete<void>(`${this.urlProducts}/${id}`, this.httpOptions())
   }
 
-  update(menu: Order): Observable<void> {
+  update(menu: any): Observable<void> {
     const body = {
       name: menu.name,
       type: menu.type,
       price: menu.price,
-      image: menu.image
+    
     }
-    return this.http.patch<void>(`${this.urlProducts}/${menu.id}`, body)
+    
+    return this.http.patch<void>(`${this.urlProducts}/${menu.id}`, body, this.httpOptions() )
   }
 }

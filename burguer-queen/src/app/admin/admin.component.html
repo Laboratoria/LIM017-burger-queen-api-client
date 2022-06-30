@@ -5,7 +5,11 @@
 </div>
 <button type="button" class="btn btn-success float-end">Editar</button> 
 <button type="button"class="fa-solid fa-trash">Eliminar</button> -->
-<div class="postProduct">
+<div>
+  <a id= "employeesView" routerLink="employees">Gestión de empleados</a>   
+</div>
+<button (click)="hideData()">Ocultar productos</button>
+<div  id="productsView" >
 <form [formGroup]="form" (submit)="addProduct()">
     <p  id="alertmessage" class="alert alert-danger"> </p><br> 
     <p class="addProduct">Agrega un nuevo producto al menú</p>
@@ -17,11 +21,11 @@
     <label for="price">Precio</label>
     <input type="text" name="precio" id="price" formControlName="price"> 
 
-    <input type="submit" value="Crear nuevo producto">
+    <input type="submit" value="Crear nuevo producto" class="btn btn-primary">
 </form>
-</div>
+
 <div>
- <a routerLink="employees">Gestión de empleados</a>   
+ 
 </div>
 <table class="table">
    
@@ -58,10 +62,11 @@
       
       </td>
       </tr>
-
+   
     </tbody>
     <tfoot>
     </tfoot>
   </table>
+</div>
 <router-outlet></router-outlet>
   

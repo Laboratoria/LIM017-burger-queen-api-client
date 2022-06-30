@@ -1,1 +1,18 @@
-<p>employees works!</p>
+<div class="emplyees" *ngFor=" let employees of users">
+<ul class="list-group">
+    <li class="list-group-item">
+        {{employees.email}}
+        {{employees.roles}}
+        {{employees.id}}
+        <button type="button" 
+        class="btn btn-danger float-end">
+        Delete</button> 
+        <button 
+        type="button" 
+        class="btn btn-success float-end"
+        >Editar
+      </button>
+
+    </li>
+</ul>
+</div>

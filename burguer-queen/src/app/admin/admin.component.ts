@@ -12,6 +12,8 @@ import { MenuService } from '../services/menu.service';
 export class AdminComponent implements OnInit {
   menu: Order[] = [];
   form!: FormGroup;
+  productsView= true;
+
   @Output() productDeleteEvent = new EventEmitter<string>();
   @Input() selection!: Order;
   @Output() updateEvent = new EventEmitter<Order>();
@@ -80,5 +82,8 @@ export class AdminComponent implements OnInit {
       }
     })
   
+  }
+  hideData(){
+    return (this.productsView = true)
   }
 }

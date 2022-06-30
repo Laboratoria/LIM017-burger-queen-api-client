@@ -67,7 +67,6 @@ export interface User {
   email: string;
   roles: Roles;
  
-
 }
 
 export interface Roles {
