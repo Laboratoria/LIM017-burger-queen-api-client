@@ -1,0 +1,27 @@
+.CookCardContainer{
+width: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.Table{
+  margin-bottom: 60px;
+}
+.CardTitle{
+  background-color: #EDEBE4;
+  font-size: 20px;
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
+  padding: 4px;
+}
+.RowItem{
+  font-size: 18px;
+  font-weight: bold;
+  padding-right: 10px;
+  margin-bottom: 10px;
+}
+.RowQty{
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}

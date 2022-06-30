@@ -1,7 +1,8 @@
 import React from "react";
+import './style.css';
 import { useContext } from "react";
 import { CartContext } from "../Context/CartContext";
-import style from './style.css';
+import { Button } from '../Button/Button';
 
 export const ItemCart = ({item}) => {
     const { deleteItemToCart, addItemToCart } = useContext(CartContext);
@@ -9,19 +10,21 @@ export const ItemCart = ({item}) => {
     const {id} = item;
 
     return (
-    <div className={style.cartItem}>
+    <div className="cartItem">
      <img src={item.image} alt={item.name} />
-     <div className={style.dataContainer}>
-       <div className={style.left}>
+     <div className="dataContainer">
+       <div className="left">
           <p> {item.name} </p>
-           <div className={style.buttons}>
-               <button onClick={() => {addItemToCart(item)}}> Agregar </button>
-                <button onClick={() => {deleteItemToCart(item)}}> Sacar </button>
+           <div className="buttons">
+               {/* <button onClick={() => {addItemToCart(item)}}> Agregar </button> */}
+               <Button type="submit" onClick={() => {addItemToCart(item)}} className="btn btn-warning btn-sm" name="Agregar" ></Button>
+                {/* <button onClick={() => {deleteItemToCart(item)}}> Sacar </button> */}
+                <Button type="submit" onClick={() => {deleteItemToCart(item)}} className="btn btn-warning btn-sm" name="Eliminar" ></Button>
             </div>
         </div>
-        <div className={style.right}>
-            <div>{item.amount}</div>
-            <p> Total: ${item.amount * item.price}</p>
+        <div className="right">
+            <div className="ProductQty">{item.qty}</div>
+            <p> Total: ${item.qty * item.price}</p>
         </div>
      </div>  
     </div>

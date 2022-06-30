@@ -1,6 +1,6 @@
 import {useNavigate } from 'react-router-dom'
-import { Button } from '../Button/Button'
-import style from './style.css'
+import { Button } from '../../components/Button/Button'
+import './style.css'
 
 export function Onboarding(){
   

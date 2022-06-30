@@ -1,0 +1,13 @@
+.HomeContainer {
+  width: 100%;
+  padding: 30px;
+}
+.HomeTitle{
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 20px;
+}
+.InputNameClient{
+width: 300px;
+}
