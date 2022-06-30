@@ -34,17 +34,7 @@ export class MenuService {
           'Authorization': `Bearer ${this.accessToken}`,
         })
     })
-  //login
-  // loginApp( res: Credentials): Observable <LoginResponse> {
-  //   this.user.email= res.email
-  //   return this.http.post<LoginResponse>(this.urlUser + 'login', res)
-  //   .pipe( 
-  //     retry(2)
-  //   )
-  // }
-
-
-
+  
   // guardar token
   saveToken(loginResponse: any) {
     localStorage.setItem("accessToken", loginResponse.accessToken);
@@ -75,10 +65,11 @@ export class MenuService {
   getOrder(): Observable<Order[]> {
     return this.http.get<Order[]>(this.apiUrl, this.httpOptions());
   }
-  // añadir nuevos usuarios
-  addUsers(credentials: Credentials): Observable<LoginResponse> {
+  // logueo de usuarios
+  loginUsers(credentials: Credentials): Observable<LoginResponse> {
     return this.http.post<LoginResponse>(`${this.urlUser}login`, credentials)
   }
+  
 
   //obtener usuarios
   getUser(loginResponse: any): Observable<User> {
@@ -86,13 +77,22 @@ export class MenuService {
     return this.http.get<User>(`${this.urlUser}users/${loginResponse.user.id}`, this.httpOptions())
   }
 
+  //obtener productos
+  getProduct(): Observable<Order[]> {
+    return this.http.get<Order[]>(this.urlProducts, this.httpOptions());
+  }
+  
+  // añadir productos
+  addProducts( url: string, body: any){
+    return this.http.post(url, body, this.httpOptions())
+  }
   logOut() {
     localStorage.clear();
   }
 
 
   deleteProduct(id: string): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`)
+    return this.http.delete<void>(`${this.urlProducts}/${id}`, this.httpOptions())
   }
 
   update(menu: Order): Observable<void> {

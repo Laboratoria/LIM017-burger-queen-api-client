@@ -22,23 +22,19 @@ export class AdminComponent implements OnInit {
     public formBuilder: FormBuilder ) { }
 
   ngOnInit(): void {
-  this.menuService.getOrder().subscribe((menu) => (this.menu = menu, console.log(menu))),
+  this.menuService.getProduct().subscribe((menu) => (this.menu = menu, console.log(menu))),
     this.form = this.formBuilder.group({
       name: ['', Validators.required],
-      category: ['', Validators.required],
-      cost: ['', Validators.required],
-      precio: ['', Validators.required]
+      type: ['', Validators.required],
+      price: ['', Validators.required]
     })
   }
- 
-  // onProductDelete(id: string |number| any):void{
-  //   return  this.productDeleteEvent.emit(id), console.log(id);
-  // }
+
   onProductDelete( id: string){
     if(confirm('¿Estás seguro?')){
       this.menuService.deleteProduct(id)
       .subscribe(
-        res => {
+        res => { console.log('borrando producto', res)
           const productArray = this.menu.filter( product => product.id !== id );
           this.menu = [...productArray];
         }
@@ -66,23 +62,23 @@ export class AdminComponent implements OnInit {
   
      this.updateEvent.emit(item);
   }
-  // addProduct( ):void{
-  //   console.log(this.form.value)
-  //   this.menuService.addUsers('https://virtserver.swaggerhub.com/ssinuco/BurgerQueenAPI/2.0.0/products',
-  //   {  
-  //   name: this.form.value.name,
-  //     precio: this.form.value.precio,
-  //     category: this.form.value.category,
-  //     cost: this.form.value.cost
-  //   }) 
-  //   .subscribe({
-  //     next: res => {
-  //       console.info(res)
-  //     },
-  //     error: error => {
-  //       console.error(error.status)
-  //     }
-  //   })
+  addProduct( ):void{
+    console.log(this.form.value)
+    this.menuService.addProducts('http://localhost:8080/products',
+    {  
+    name: this.form.value.name,
+    price: this.form.value.price,
+    type: this.form.value.type,
   
-  // }
+    }) 
+    .subscribe({
+      next: res => {
+        console.info(res)
+      },
+      error: error => {
+        console.error(error.status)
+      }
+    })
+  
+  }
 }

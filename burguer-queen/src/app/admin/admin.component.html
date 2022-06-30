@@ -6,20 +6,19 @@
 <button type="button" class="btn btn-success float-end">Editar</button> 
 <button type="button"class="fa-solid fa-trash">Eliminar</button> -->
 <div class="postProduct">
-<!-- <form [formGroup]="form" (submit)="addProduct()">
+<form [formGroup]="form" (submit)="addProduct()">
     <p  id="alertmessage" class="alert alert-danger"> </p><br> 
     <p class="addProduct">Agrega un nuevo producto al menú</p>
     <label for="name">Nombre</label>
     <input type="text" id="name" name="name" formControlName="name"> 
-    <label for="category">Categoria</label>
-    <input type="text" id="category" name="category" formControlName="category"> 
-    <label for="cost">Costo</label>
-    <input type="text" name="cost" id="cost" formControlName="cost"> 
-    <label for="precio">Precio</label>
-    <input type="text" name="precio" id="precio" formControlName="precio"> 
+    <label for="type">Categoria</label>
+    <input type="text" id="type" name="Tipo" formControlName="type"> 
+    
+    <label for="price">Precio</label>
+    <input type="text" name="precio" id="price" formControlName="price"> 
 
     <input type="submit" value="Crear nuevo producto">
-</form> -->
+</form>
 </div>
 <div>
  <a routerLink="employees">Gestión de empleados</a>   
@@ -40,10 +39,10 @@
         <tr *ngFor="let productList of menu" 
         [ngClass]=  "{'active': productList?.id=== selection?.id}">
         <td>{{productList.id}}</td>
-        <td>{{productList.products[0].product.name}}</td>
-        <td>{{productList.products[0].product.price}}</td>
-        <td>{{productList.products[0].product.type}}</td>
-        <td><img src="{{productList.products[0].product.image}}" alt=""></td>
+        <td>{{productList.name}}</td>
+        <td>{{productList.price}}</td>
+        <td>{{productList.type}}</td>
+        <td><img src="{{productList.image}}" alt=""></td>
         <td>
         <button 
         type="button"

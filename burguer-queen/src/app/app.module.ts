@@ -48,14 +48,11 @@ export class AppModule { }
 export interface Order {
   id: any;
   name: string;
-  category: string;
-  precio: number;
-  cost: string;
+  type: string;
+  price: number;
   email: string;
   password: string;
   image: any;
-  price: number;
-  type: string;
   dataEntry: any;
   products: any;
   client: string;

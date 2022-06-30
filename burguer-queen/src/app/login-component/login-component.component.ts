@@ -63,7 +63,7 @@ export class LoginComponentComponent implements OnInit {
       email: res.email,
       password: res.password
     }
-    this.menuService.addUsers(this.login)
+    this.menuService.loginUsers(this.login)
       .subscribe({
         next: res => {
           // const str = 'accessToken' as string;
