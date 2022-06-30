@@ -2,9 +2,11 @@ import React from 'react';
 import { useContext } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { createOrder } from '../../services/orders';
 import { CartContext } from '../Context/CartContext';
 import {ItemCart} from '../ItemCart/ItemCart'
-import style from './style.css'
+import  './style.css';
+import { Button } from '../Button/Button';
 
 export const Cart= () => {
   const [cartOpen, setCartOpen] = useState(false);
@@ -36,41 +38,33 @@ export const Cart= () => {
         }
       ]
     }
+    createOrder(data).then().catch()
+    
   return(
-  <div className={style.cartContainer}>
-    <div onClick={() => {
-       setCartOpen(!cartOpen);
-    }}
-    className={style.buttonCartContainer}
-    >
-      <div className={style.buttonCart}>
-        {/* {!cartOpen ? (
-          console.log('aqui')
-          ) : (
-            console.log('o si no')
-          )} */}
-        {!cartOpen && <div className={style.productsNumber}>{productsLength}</div>}
-      </div>
+  <div className="cartContainer">
+    <div onClick={() => {setCartOpen(!cartOpen);}} className="buttonCartContainer">
+      <div className="buttonCart">{!cartOpen && <div className="productsNumber">{productsLength}</div>}</div>
+    </div>
 
     {cartItems && cartOpen && (
-     <div className={style.cart}>
-      <h2> Tu carrito </h2>
+     <div className="cart">
+      <h2> Tu Orden </h2>
 
       {
         cartItems.length === 0 ?
-        (<p className={style.cartVacio}> Tu carrito esta vacio </p>) :
-        (<div className={style.productsContainer}> 
+        (<p className="cartVacio"> Tu carrito esta vacio </p>) :
+        (<div className="productsCartContainer"> 
           {cartItems.map((item, i) => (
            <ItemCart key={i} item={item} />
           ))}
          </div>)
       }
 
-      <h2 className={style.total}> Total: $ {total} </h2>
+      <h2 className="total"> Total: $ {total} </h2>
+      <Button type="submit" onClick={() => navigate('/login')} className="btn btn-warning btn-lg" name="Enviar Orden" ></Button>
      </div>
     )}
   </div>
-</div>
 )
 
 };

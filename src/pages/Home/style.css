@@ -1,7 +1,13 @@
-.home {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+.HomeContainer {
+  width: 100%;
+  padding: 30px;
+}
+.HomeTitle{
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 20px;
+}
+.InputNameClient{
+width: 300px;
 }

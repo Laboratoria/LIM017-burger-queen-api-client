@@ -1,8 +1,9 @@
 import React from 'react';
+import './style.css';
 import { useContext, useEffect, useState } from 'react';
 import { CartContext } from '../Context/CartContext';
-import style from './style.css'
-import { getProducts } from '../../services/products'
+import { getProducts } from '../../services/products';
+import { Button } from '../Button/Button';
 
 export const Products = () => {
   const {addItemToCart} = useContext(CartContext)
@@ -19,16 +20,17 @@ export const Products = () => {
 
 
   return (
-  <div className={style.productsContainer}>
+  <div className="productsContainer">
    {products.map((product, i) => (
-   <div key={i} className={style.product}>
+   <div key={i} className="product">
     <img src={product.image} alt={product.name}/>
     <div>
       <p>
         {product.name} - ${product.price}
       </p>
     </div>
-    <button onClick={() => addItemToCart(product)}> Agregar al carrito </button>
+    {/* <button onClick={() => addItemToCart(product)}> Agregar al carrito </button> */}
+    <Button type="submit" onClick={() => addItemToCart(product)} className="btn btn-warning btn-sm" name="Agregar" ></Button>
     </div>
     ))}
   </div>
