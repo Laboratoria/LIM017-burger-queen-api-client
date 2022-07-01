@@ -1,10 +1,26 @@
-<div class="emplyees" *ngFor=" let employees of users">
+<div  id="formUsers" >
+    <form [formGroup]="form" (submit)="addUsers()">
+        <p  id="alertmessage" class="alert alert-danger"> </p><br> 
+        <p class="addProduct">Agrega un nuevo producto al menú</p>
+        <label for="email">Correo electrónico</label>
+        <input type="text" id="name" name="email" formControlName="email"> 
+        <label for="password">Contraseña</label>
+        <input type="text" id="" name="password" formControlName="password"> 
+        
+        <label for="roles">Roles</label>
+        <input type="text" name="roles" id="roles" formControlName="roles"> 
+    
+        <input type="submit" value="Crear nuevo producto" class="btn btn-primary">
+    </form>
+</div>    
+<div class="employees" *ngFor=" let employees of users">
 <ul class="list-group">
     <li class="list-group-item">
-        {{employees.email}}
-        {{employees.roles}}
-        {{employees.id}}
+        {{employees.email}} <br>
+        {{employees.roles}} <br>
+        {{employees.id}} <br>
         <button type="button" 
+        (click)="onUserDelete(employees.id)"
         class="btn btn-danger float-end">
         Delete</button> 
         <button 

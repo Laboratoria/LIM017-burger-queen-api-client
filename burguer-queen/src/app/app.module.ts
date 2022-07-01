@@ -65,15 +65,16 @@ export interface LoginResponse {
 export interface User {
   id: string;
   email: string;
-  roles: Roles;
+  roles: string;
  
 }
 
-export interface Roles {
-  admin: boolean;
-  waiter: boolean;
+// export interface Roles {
+//   admin:any;
+//   waiter: any;
+//   chef: any;
 
-}
+// }
 export interface Credentials {
   email: string;
   password: string;

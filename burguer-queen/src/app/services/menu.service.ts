@@ -45,10 +45,12 @@ export class MenuService {
       .subscribe(res => {
         localStorage.setItem('id', res.id);
         localStorage.setItem('email', res.email);
-        if (res.roles.admin === true) {
+        if (res.roles === 'admin') {
           this.router.navigate(['/admin']);
 
-        } else if (res.roles.waiter === true) {
+        } else if (res.roles === 'waiter') {
+          this.router.navigate(['/waiter'])
+        } else if(res.roles === 'chef'){
           this.router.navigate(['/waiter'])
         } else {
           this.router.navigate(['/login'])
@@ -71,9 +73,9 @@ export class MenuService {
   }
   
 //obtener usuarios 
-//   getAllUsers(user: any)<User>{
-//     return this.http.get<User>(`${this.urlUser}users`, this.httpOptions())
-//  }
+  getAllUsers(): Observable<User> {
+    return this.http.get<User>(`${this.urlUser}users`, this.httpOptions())
+  }
   //obtener usuarios por id
   getUser(loginResponse: any): Observable<User> {
 
@@ -97,6 +99,9 @@ export class MenuService {
 
   deleteProduct(id: string): Observable<void> {
     return this.http.delete<void>(`${this.urlProducts}/${id}`, this.httpOptions())
+  }
+  deleteUser(id: string): Observable<void> {
+    return this.http.delete<void>(`${this.urlUser}users/${id}`, this.httpOptions())
   }
 
   update(menu: any): Observable<void> {
