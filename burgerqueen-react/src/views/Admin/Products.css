@@ -1,0 +1,143 @@
+.Table {
+    text-align: center;
+} 
+
+/* .HomeAdmin{
+    background-image: url('../Images/Burger.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 1.5fr 0.5fr;
+    height: 92vh;
+    font-family: 'Raleway', sans-serif;
+     /* font-family: 'Poppins'; 
+    font-size: 16px;
+    /* margin: 0;
+    box-sizing: border-box;
+    font-weight: bold; 
+}
+.section__listaProductos{
+
+}
+.section__seleccionarProductos{
+    
+}
+
+:root{
+    --primary-color: white;
+    --secundary-color: rgb(61,68,73);
+    --highlight-color: #3282b8;
+
+    --dt-padding:12px;
+    --dt-padding-s: 6px;
+    --dt-padding-xs: 2px;
+
+    --dt-border-radius: 3px;
+
+    --dt-border-color: var(--secundary-color);
+    --dt-hover-cell-color: var(--highlight-color);
+    --dt-even-row-color: var(var(--secundary-color));
+    --dt-text-color-button: var(--primary-color);
+    --dt-background-color-container: #2a3338;
+    --dt-text-color: var(--primary-color);
+    --dt-input-color: var(--primary-color);
+    --dt-input-background-color: var(--secundary-color);
+    --dt-bg-active-button: var(--highlight-color);
+    --dt-text-color-active-button: var(var(--primary-color));
+}
+i{
+    font-size: 16px;
+}
+
+.table{
+    background-color: var(--dt-background-color-container);
+    border-radius: var(--dt-border-radius);
+    color: var(--dt-text-color);
+    width: 600px;
+    margin: 0 auto;
+    font-size: 12px;
+}
+
+.table .header-table{
+    border-bottom: solid 1px var(--dt-input-color);
+    padding: var(--dt-padding);
+    display:flex;
+    align-items: baseline;
+}
+.search{
+    width: 30px;
+}
+.search-input{
+    width: 100%;
+    background-color: var(--dt-input-background-color);
+    display: block;
+    box-sizing: border-box;
+    border-radius: var(--dt-border-radius);
+    border: solid 1px var(--dt-input-color);
+    color: var(--dt-input-color);
+}
+
+.tools{
+    width: 70%;
+}
+
+.tools ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: start;
+    align-items: baseline;
+}
+
+.tools ul li{
+    display: inline-block;
+    margin: 0 var(--dt-padding-xs);
+    align-items: baseline;
+}
+.table .footer-table{
+    padding: var(--dt-padding);
+    display: flex;
+    align-items: baseline;
+}
+.footer-table .list-items{
+    width: 50%;
+}
+.table .header-table .tools ul li button{
+    color: var(--dt-text-color-button);
+    width: 100%;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: var(--dt-border-radius);
+    background: transparent;
+    cursor: pointer;
+}
+.table .header-table .tools ul li button:hover{
+    background: var(--dt-bg-active-button);
+    color: var(--dt-text-color-active-button);
+}
+.table .datatable{
+    border-collapse: collapse;
+    width: 100%
+}
+.table .datatable,
+.table .datatable th,
+.table .datatable td{
+    padding: var(--dt-padding) var(--dt-padding);
+}
+.table .datatable th{
+    font-weight: bolder;
+    text-align: left;
+    border-bottom: solid 1px var(--dt-border-color);
+}
+.table .datatable td{
+    border-bottom: solid 1px var(--dt-border-color);
+}
+.table .datatable tbody tr:nth-child(even){
+    background-color: var(--dt-even-row-color);
+}
+
+.table .datatable tbody tr:hover{
+    background-color: var(--dt-hover-cell-color);
+} */

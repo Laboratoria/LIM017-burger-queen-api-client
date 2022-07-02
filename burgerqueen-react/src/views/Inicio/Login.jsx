@@ -1,6 +1,6 @@
 import './Login.css';
 // import { useState } from 'react';
-import logo from '../newDir/IconBurger.svg';
+import logo from '../Images/IconBurger.svg';
 import { useNavigate } from "react-router-dom"
 import { useForm } from 'react-hook-form'
 
@@ -14,7 +14,11 @@ const request = ({email, password}, url) => new Promise ((resolve, reject) =>{
     }
   })
   .then(res => res.json())
-  .then(response => resolve(response))
+  .then(response => {
+    console.log(response);
+    resolve(response)
+
+  })
   .catch(error => reject(error))
 })
 
@@ -23,26 +27,49 @@ const request = ({email, password}, url) => new Promise ((resolve, reject) =>{
 const LoginForm = () => {
   let navigate = useNavigate();
 
-  const {register, formState: { errors }, handleSubmit} = useForm();
+  const { register, setError, formState: {errors}, handleSubmit} = useForm();
 
   const onSubmit = (data, event) => {
         const url = 'http://localhost:8080/login';
         const {email, password} = data;
         console.log({email, password});
+        
         request({email, password}, url)
         .then((res) => {
-          // console.log('aqui esta consoleando el res', res)
-          if (res.accessToken !== undefined){
-            return navigate('/Waiter')
-          } else if(res === 'Cannot find user'){
-            return 'Incorrect User'
-          } else if(res === 'Incorrect password'){
-            return res
-          }return console.log(res)
+          console.log('aqui esta consoleando el res', res) // obtencion del TOKEN
+          // const resString = res.stringify();
+          console.log("si estoy entrando...");
+          localStorage.setItem('accessToken', (res.accessToken));
+          console.log(res.accessToken);
+          console.log(res.user)
+          console.log(res.user.roles);
+
+          if (res.accessToken !== undefined){       // Accede si captura el TOKEN y riderecciona a sus respectivas pág.
+
+            if(res.user.roles.admin === true){
+              navigate('/Admin')
+            } else if(res.user.roles.waiter === true){
+              navigate('/Waiter')
+            } else{
+              console.log("soy chef")
+            }
+            // return navigate('/Waiter')
+
+            } else if(res === 'Cannot find user'){    // ERRORES
+              setError('email', {
+              type: "server",
+              message: res,
+              })
+             } else{
+              setError('password', {
+                type: "server",
+                message: res,
+                })
+             }
         })
-
-        .catch((error) => console.log(error.message))      
-
+        .catch((error) => {
+          console.log('catch', error.message); 
+        })
         event.target.reset();
   }
     return (

@@ -1,26 +1,27 @@
 import './Home.css';
-import CupOfCofee from '../newDir/Cup-of-cofee.svg';
-import burger from '../newDir/burger-lunch.svg';
-import burgerToSelect from '../newDir/burgertoselect.svg'
+import CupOfCofee from '../Images/Cup-of-cofee.svg';
+import burger from '../Images/burger-lunch.svg';
+import burgerToSelect from '../Images/burgertoselect.svg'
 import { useState, useEffect } from 'react';
-
 
 const Home = () => {
     const [ products, setProducts ] = useState();
-    const promesa = () => fetch('http://localhost:8080/products', {
+
+    const token = localStorage.getItem('accessToken');
+
+    const getProducts = () => fetch('http://localhost:8080/products', {
             method: "GET",
             headers: {
-                "Content-type": "application/json;charset=UTF-8",
-                "authorization": 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuaXRhLmJvcmdAc3lzdGVycy54eXoiLCJpYXQiOjE2NTY0MjMyOTEsImV4cCI6MTY1NjQyNjg5MSwic3ViIjoiMSJ9.NuesG4anPeyMIFwzKEv0E2fjivJcWPt-PWVop-2ZC4w'}
+                "Content-type": "application/json",
+                "authorization": `Bearer ${token}`
+            }
             })
         .then(response => response.json()) 
         .then(json => setProducts(json))
         .catch(err => console.log(err));
 
     useEffect(()=>{
-
-        promesa();
-
+        getProducts();
     }, [])
 
     return(
@@ -62,11 +63,13 @@ const Home = () => {
                     </div> 
                     <div className="lit-of-Products">
                         List Products
+                        {console.log(products)}
                         {!products ? 'Cargando' : 
                         products.map((product) => {
                             return  <div key={product.id}>
                                         <p>{product.name}</p>
                                         {/* <img src={product.image} alt="01" /> */}
+                                        {<img src={product.image} alt="01" />}
                                     </div>})}
                         
                     </div>

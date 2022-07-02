@@ -3,7 +3,7 @@
     box-sizing: border-box;
 }
 .App-main {
-    background-image: url('../newDir/Burger.png');
+    background-image: url('../Images/Burger.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center;

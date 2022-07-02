@@ -1,0 +1,24 @@
+/* ul  */
+.VerticalBar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    /* width: 200px; */
+    background-color: #d4d4d4;
+    
+}
+
+.VerticalBar__li {
+    display: block;
+    color: #000;
+    padding: 8px 0 8px 16px;
+    text-decoration: none;
+}
+.VerticalBar__li:hover{
+    cursor: pointer;
+}
+
+.VerticalBar__li:hover {
+    background-color: rgb(244, 130, 0);
+    color: white;
+}
