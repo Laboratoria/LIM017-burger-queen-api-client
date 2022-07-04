@@ -1,0 +1,53 @@
+<h1>MENU</h1>
+<div class="rown">
+  <div class="imgBreakfast">
+    <img src="./assets/img/breakfast.svg" alt="Desayunos" class="breakfast">
+  </div>
+  <div class="img-lunch">
+    <img src="./assets/img/Hamburger.svg" alt="Almuerzos y cenas" class="lunch">
+  </div>
+</div>
+<!-- Para ver los productos y tomar pedidos -->
+<a routerLink="products">Tomar pedido</a>
+<router-outlet></router-outlet>
+
+<!-- Menú de desayunos -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <!-- <app-login-component></app-login-component> -->
+    </div>
+    <div class="col-md-4">
+      <div class="http" *ngFor="let product of menu ">
+        <!-- //posible cambiar a tabla -->
+        <ul class="list-group">
+          <li class="list-group-item">
+            {{product.client}}
+            {{product.id}} <br>
+            {{product.status}} <br>
+            {{product.dataEntry}} <br>
+            {{ product.products[0].product.name}} <br>
+            {{ product.products[0].product.price}} <br>
+            {{ product.products[0].product.type}} <br>
+            <img src="{{ product.products[0].product.image}}" alt=""> <br>
+            </li>
+            <li class="list-group-item"> 
+            {{ product.products[1].product.name}} <br>
+            {{ product.products[1].product.price}} <br>
+            {{ product.products[1].product.type}} <br>
+            <img src="{{ product.products[1].product.image}}" alt=""> <br>
+            <button type="button" class="btn btn-danger float-end">Delete</button>
+          </li>
+        </ul>
+      </div>
+     
+      <!-- <img src="./assets/img/Coffee.svg"> -->
+    </div>
+  </div>
+</div>
+
+<!-- 
+<a href="https://storyset.com/work">Work illustrations by Storyset</a>  chefcito 
+<a href="https://storyset.com/business">Business illustrations by Storyset</a> admin
+-->

@@ -51,7 +51,7 @@ export class MenuService {
         } else if (res.roles === 'waiter') {
           this.router.navigate(['/waiter'])
         } else if(res.roles === 'chef'){
-          this.router.navigate(['/waiter'])
+          this.router.navigate(['/chef'])
         } else {
           this.router.navigate(['/login'])
         }
@@ -104,14 +104,7 @@ export class MenuService {
     return this.http.delete<void>(`${this.urlUser}users/${id}`, this.httpOptions())
   }
 
-  update(menu: any): Observable<void> {
-    const body = {
-      name: menu.name,
-      type: menu.type,
-      price: menu.price,
-    
-    }
-    
-    return this.http.patch<void>(`${this.urlProducts}/${menu.id}`, body, this.httpOptions() )
+  update(product: any, body: any): Observable<void> {  
+      return this.http.patch<void>(`${this.urlProducts}/${product.id}`, body,  this.httpOptions() )
   }
 }

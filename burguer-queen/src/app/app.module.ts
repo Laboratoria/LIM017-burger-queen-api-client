@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponentComponent } from './login-component/login-component.component';
 import { AdminComponent } from './admin/admin.component';
-import { OrderComponent } from './order/order.component';
+import { OrderComponent } from '../waiter/order/order.component';
 import { RegisterComponent } from './register/register.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
@@ -15,6 +15,8 @@ import { MenuService } from './services/menu.service';
 import { AuthGuard } from './auth/auth.guard';
 import { EmployeesComponent } from './employees/employees.component';
 import { ResolveStart } from '@angular/router';
+import { ChefComponent } from './chef/chef.component';
+import { ProductsComponent } from '../waiter/order/products/products.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { ResolveStart } from '@angular/router';
     NavbarComponent,
     PagenotfoundComponent,
     HomeComponent,
-    EmployeesComponent
+    EmployeesComponent,
+    ChefComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
@@ -66,8 +70,7 @@ export interface User {
   id: string;
   email: string;
   roles: string;
- 
-}
+ }
 
 // export interface Roles {
 //   admin:any;
@@ -80,5 +83,11 @@ export interface Credentials {
   password: string;
   id?: any;
 }
-
+ export interface itemsEdited {
+  name: string;
+  price: string;
+  type: string;
+  image?: any;
+  dataEntry?: any;
+ }
 

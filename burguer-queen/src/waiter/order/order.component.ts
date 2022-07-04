@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
-import { MenuService } from '../services/menu.service';
-import { Order } from '../app.module';
+import { MenuService } from '../../app/services/menu.service';
+import { Order } from '../../app/app.module';
 
 
 @Component({

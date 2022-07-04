@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Order } from '../app.module';
+import { itemsEdited, Order } from '../app.module';
 import { MenuService } from '../services/menu.service';
 
 
@@ -30,6 +30,7 @@ export class AdminComponent implements OnInit {
       type: ['', Validators.required],
       price: ['', Validators.required]
     })
+    
   }
 
   onProductDelete( id: string){
@@ -44,8 +45,8 @@ export class AdminComponent implements OnInit {
     }
   }
 
-  UpdateInfo(menu: Order):void{
-    this.menuService.update(menu)
+  UpdateInfo(menu: any, body: itemsEdited):void{
+    this.menuService.update(menu, body)
     .subscribe({
     next:res => {
       const productArray = this.menu.filter( product => product.id !== menu.id );
@@ -59,7 +60,7 @@ export class AdminComponent implements OnInit {
   }
 
   onUpdateInfo ( item: Order, change:string): void{
-  console.log(item);
+  console.log('linea 62', item);
   console.log( change);
   
      this.updateEvent.emit(item);
