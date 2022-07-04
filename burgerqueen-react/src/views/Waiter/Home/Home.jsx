@@ -1,13 +1,16 @@
 import './Home.css';
-import CupOfCofee from '../Images/Cup-of-cofee.svg';
-import burger from '../Images/burger-lunch.svg';
-import burgerToSelect from '../Images/burgertoselect.svg'
+import CupOfCofee from '../../Images/Cup-of-cofee.svg';
+import burger from '../../Images/burger-lunch.svg';
+import burgerToSelect from '../../Images/burgertoselect.svg'
 import { useState, useEffect } from 'react';
+import ProductCard from './ProductCard';
+import ListOfOrder from './ListOfOrder';
 
 const Home = () => {
     const [ products, setProducts ] = useState();
 
     const token = localStorage.getItem('accessToken');
+    // const productInLS = localStorage.getItem('product-1')
 
     const getProducts = () => fetch('http://localhost:8080/products', {
             method: "GET",
@@ -22,6 +25,7 @@ const Home = () => {
 
     useEffect(()=>{
         getProducts();
+        
     }, [])
 
     return(
@@ -61,23 +65,24 @@ const Home = () => {
                             <i className="fa-solid fa-circle-play iconHomeView"></i>
                         </div>
                     </div> 
-                    <div className="lit-of-Products">
-                        List Products
+                    <div className="list-of-Products">
+                        <div>
                         {console.log(products)}
-                        {!products ? 'Cargando' : 
+                        {!products ? 'Cargando...' : 
                         products.map((product) => {
-                            return  <div key={product.id}>
-                                        <p>{product.name}</p>
-                                        {/* <img src={product.image} alt="01" /> */}
-                                        {<img src={product.image} alt="01" />}
-                                    </div>})}
-                        
+                            return  <ProductCard 
+                                key={product.id}
+                                prop={product} /> 
+                                })}
+                        </div>
                     </div>
                 </div>
             </section>
             <section className="section__makeOrder">
                 <div  className="listOfOrder">
                     lista de ordenes
+                    {/* { productInLS ? <ListOfOrder/> : 'nada'} */}
+                    <ListOfOrder/>
                 </div>
             </section>
         </div>

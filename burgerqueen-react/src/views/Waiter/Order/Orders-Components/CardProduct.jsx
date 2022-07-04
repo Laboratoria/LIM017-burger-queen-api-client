@@ -1,13 +1,13 @@
-import product from '../../../Images/burger-lunch.svg';
+// import product from '../../../Images/burger-lunch.svg';
 import style from './CardProduct.module.css'
-function CardProduct(){
+function CardProduct({img, name, qty, price}){
     return(
         <div className={style.CardProduct}>
-            <img src={product} alt='product' className={style.CardProduct__img}></img>
+            <img src={img} alt={name} className={style.CardProduct__img}></img>
             <section className={style.CardProduct__text}>
-                <p className={style.CardProduct__text_name}>Chipotle Burger chip</p>
-                <p className={style.CardProduct__text_portions}>3 porciones</p>
-                <p>Total: $62.85</p>
+                <p className={style.CardProduct__text_name}>{name}</p>
+                <p className={style.CardProduct__text_portions}>{qty}</p>
+                <p>Total: {price * qty}</p>
             </section>
         </div>
     )

@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
 import './Narvbar.css'
+import { useNavigate } from "react-router-dom"
 
 const Navbar = ({ref0, name0, icon0, ref1, name1, icon1, ref2, name2, icon2}) => {
+    let navigate = useNavigate();
+    function logout(){
+        localStorage.clear();
+        return navigate('/Login');
+    }
     return (
         <nav className="configuration">
             <div>
@@ -17,7 +23,7 @@ const Navbar = ({ref0, name0, icon0, ref1, name1, icon1, ref2, name2, icon2}) =>
                 <Link to={ref2} className='btn btn-dark'>{name2}</Link>
             </div>
             <div>
-                <i className="fa-solid fa-power-off"></i>
+                <i onClick={logout} className="fa-solid fa-power-off"></i>
             </div>
         </nav>
     )

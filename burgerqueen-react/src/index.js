@@ -7,10 +7,10 @@ import Login from './views/Inicio/Login';
 import Products from './views/Admin/Products'
 import Users from './views/Admin/Users'
 import ProfileAdmin from './views/Admin/ProfileAdmin';
-import {AppWaiter, AppAdmin} from './App';
-import Profile from './views/Waiter/Profile';
+import { AppWaiter, AppAdmin } from './App';
+import Profile from './views/Waiter/Profile/Profile';
 import Order from "./views/Waiter/Order/Orders";
-import HomeWaiter from "./views/Waiter/Home";
+import HomeWaiter from "./views/Waiter/Home/Home";
 import PageNotFound from "./views/Waiter/PageNotFound";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

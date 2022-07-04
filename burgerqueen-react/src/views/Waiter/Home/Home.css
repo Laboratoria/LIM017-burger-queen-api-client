@@ -1,44 +1,53 @@
 .Home{
-    background-image: url('../Images/Burger.png');
+    background-image: url('../../Images/Burger.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center;
     background-size: cover;
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 2fr 1fr;
     height: 92vh;
     font-family: 'Raleway', sans-serif;
-     /* font-family: 'Poppins'; */
     font-size: 16px;
-    /* margin: 0;
-    box-sizing: border-box;
-    font-weight: bold; */
 }
 
 .section__chooseMenu{
-    /* background-color: rgb(64, 226, 43); */
-    display: grid;
-    grid-template-rows: 1fr 6fr;
-    gap: 5px;
-    padding: 10px;
+    overflow-y: auto;
 }
+.section__chooseMenu::-webkit-scrollbar {
+    -webkit-appearance: none;
+    height: 15px;
+    width:8px;
+}
+
+.section__chooseMenu::-webkit-scrollbar-button {
+    display: flex;
+    
+} 
+.section__chooseMenu::-webkit-scrollbar-thumb {
+    background-color: #1312129f;
+    border-radius: 20px;
+    border: 1px white;
+}
+
 .div__buttons{
     /* background-color: aquamarine; */
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5px;
+    align-items: center;
+    padding: 5px;
 }
 
 .div__buttons>div{
     /* background-color: rgb(227, 255, 127); */
     padding: 10px;
     width: 100%;
-    
 }
 
-.section__chooseMenu>div>div>button{
+.div__buttons>div>button{
     width: 100%;
-    height: 55px;
+    height: 40px;
     background-color: rgba(255, 255, 255, 0.817);
     text-align: left;
     padding-left: 30px;
@@ -50,73 +59,77 @@
     justify-content: space-between;
     font-size: 16px;
     font-weight: 600;
-    
-}
-.section__chooseMenu>div>div>button:hover{
-background: #a5440c;
-cursor: pointer;
-}
-div>div>button>img{
-    width: 90px;
 }
 
+.div__buttons>div>button:hover{
+    background: #fa5c00;
+    cursor: pointer;
+    color: white;
+}
+
+.div__buttons>div>button>img{
+    width: 60px;
+}
 .products{
-    /* background-color: rgba(226, 43, 144, 0.692);  */
-    /* display: grid;
-    grid-template-rows: 1fr 6fr; */
     display: flex;
     flex-direction: column;
 }
 .choose-by-type{
-    /* display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    background-color: rgba(233, 236, 16, 0.644);
-    text-align: center; */
     display: flex;
-    /* flex-wrap: wrap; */
     justify-content: center;
     align-items: center;
     gap: 18px;
+    height: 100px;
+    /* background-color: rgba(233, 236, 16, 0.644) */
 }
+
 .choose-by-type>div{
     display: flex;
     flex-direction: column;
     width: 14%;
-    height: cover;
+    height: 100%;
     background-color: #ffffff57;
     justify-content: space-around;
     align-items: center;
     border-radius: 18px;
     padding: 5px;
-    gap: 10px;
+    gap: 5px;
     color: white;
 }
+
 .choose-by-type>div:hover{
     background: #ee5903b8;
     cursor: pointer;
-    }
+}
 
 .choose-by-type>div>img{
-    width: 55px;
+    width: 50px;
     background-color: rgba(255, 255, 255);
     border-radius: 15px;
 }
+
 .iconHomeView{
     color: black;
     font-size: larger;
 }
 
+.list-of-Products{
+   height: auto;
+   padding: 20px;
+   text-align: center;
 
-.lit-of-Products{
-    background-color: rgba(20, 16, 236, 0.644);
-    /* height: ; */
+    
+    /* background-color: rgba(0, 0, 0, 0.65); */
+}
+
+.list-of-Products>div{
+    /* background-color: #a5440c; */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 180px);
+
 }
 
 .section__makeOrder{
-    /* display: grid; */
-    /* grid-template-rows: 1fr 1fr; */
     background-color: rgba(245, 245, 220, 0.741);
 }
-.div_listOfOrder{
-    background-color: rgba(165, 42, 42, 0.34);
-}
+
