@@ -24,6 +24,11 @@
             <div>
                 <label for="client"><mark>Nombre del cliente</mark></label>
                 <input type="text" name="" id="client">
+                <div class="col-md-12 col-12">
+                    <button (click)="sumar()">+</button>
+                    <span>{{numero}}</span>
+                    <button (click)="restar()">-</button>
+                </div>
                 <p>Total:</p>
                 <button type="button" class="btn btn-success">Enviar a Cocina</button>
             </div>

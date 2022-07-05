@@ -2,3 +2,7 @@
     width: 1180px;
     height: 800px;
 }
+#pageinitial{
+    margin-top: 50px;
+    display:flex;
+}
