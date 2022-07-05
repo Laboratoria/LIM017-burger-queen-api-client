@@ -1,14 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Order } from '../app.module';
+import { Credentials, Order } from '../app.module';
 import { MenuService } from '../services/menu.service';
 import { Router } from '@angular/router';
-
-// interface Credentials {
-//   "email": string,
-//   "password": string 
-
-// }
 
 @Component({
   selector: 'app-login-component',
@@ -17,39 +11,37 @@ import { Router } from '@angular/router';
 })
 export class LoginComponentComponent implements OnInit {
   menu: Order[] = [];
+  login!: Credentials;
   form!: FormGroup;
   messageError: undefined;
   constructor(public formBuilder: FormBuilder,
-     public menuService: MenuService, 
-     private router:Router) { }
-
+    public menuService: MenuService) { }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      email: ['',[Validators.required, Validators.email]],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
-    }) 
+    })
   }
 
-
-  onSubmit() {
-    this.menuService.addUsers('https://virtserver.swaggerhub.com/ssinuco/BurgerQueenAPI/2.0.0/login',
-      {
-        email: this.form.value.email,
-        password: this.form.value.password
-      })
-      .subscribe( { 
+  onSubmit(res: Credentials) {
+    this.login =
+    {
+      email: res.email,
+      password: res.password
+    }
+    this.menuService.loginUsers(this.login)
+      .subscribe({
         next: res => {
-          console.info(res), this.router.navigate(['/waiter'])
+        //console.log('recibiendo respuesta', res)
+          this.menuService.saveToken(res)
         },
-         error: error => {
-          // mostrar error igukando propiedad:
-          this.messageError = error.status; 
-         },
+        error: error => {
+          // mostrar error igualando propiedad:
+          this.messageError = error.status;
+        },
       });
   }
-  // onSubmit(values: Order): void{
-  //   console.info(values)
-  // }
+
 
 }

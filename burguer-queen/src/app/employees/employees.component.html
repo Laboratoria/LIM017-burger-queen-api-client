@@ -1,29 +1,34 @@
-<h2>TRABAJADORES ECUABURGUER</h2>
-<!-- 
-<div>
- <a routerLink="employees">Gestión de empleados</a>   
-</div>
-<table class="table">
-   
-    <thead class="thead dark">
-        <tr>
-        <th scope="col">Id</th>
-        <th scope="col">Email</th>
-        <th scope="col">Roles</th>
-      
-      </tr>
-    </thead>
-    <tbody >
-     
-        <td>{{employees.id}}</td>
-        <td>{{employees.email}}</td>
-        <td>{{employees.roles}}</td>
-
+<div  id="formUsers" >
+    <form [formGroup]="form" (submit)="addUsers()">
+        <p  id="alertmessage" class="alert alert-danger"> </p><br> 
+        <p class="addProduct">Agrega un nuevo producto al menú</p>
+        <label for="email">Correo electrónico</label>
+        <input type="text" id="name" name="email" formControlName="email"> 
+        <label for="password">Contraseña</label>
+        <input type="text" id="" name="password" formControlName="password"> 
+        
+        <label for="roles">Roles</label>
+        <input type="text" name="roles" id="roles" formControlName="roles"> 
     
+        <input type="submit" value="Crear nuevo producto" class="btn btn-primary">
+    </form>
+</div>    
+<div class="employees" *ngFor=" let employees of users">
+<ul class="list-group">
+    <li class="list-group-item">
+        {{employees.email}} <br>
+        {{employees.roles}} <br>
+        {{employees.id}} <br>
+        <button type="button" 
+        (click)="onUserDelete(employees.id)"
+        class="btn btn-danger float-end">
+        Delete</button> 
+        <button 
+        type="button" 
+        class="btn btn-success float-end"
+        >Editar
+      </button>
 
-    </tbody>
-    <tfoot>
-    </tfoot>
-  </table>
-<router-outlet></router-outlet>
-   -->
+    </li>
+</ul>
+</div>

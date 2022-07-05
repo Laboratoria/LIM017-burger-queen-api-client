@@ -9,7 +9,7 @@
 </div>
 
 <div class="login">
-    <form [formGroup]="form" (submit)="onSubmit()">
+    <form [formGroup]="form" (submit)="onSubmit(form.value)">
         <p  *ngIf="messageError" id="alertmessage" class="alert alert-danger">Error de logueo {{ messageError }} </p><br> 
         <p class="title">ECUABURGUER</p>
         <label for="newItem"> Correo electrónico </label>

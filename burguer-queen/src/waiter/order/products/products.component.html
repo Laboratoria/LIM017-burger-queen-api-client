@@ -1,0 +1,32 @@
+<a routerLink="/waiter">Ver Ordenes</a>
+<router-outlet></router-outlet>
+<button class="nav-menu" data-value="breakfast">
+    Desayunos
+</button>
+<button class="nav-menu" data-value="lunch">
+    Almuerzos y Acompañamientos
+</button>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div *ngFor=" let productList of menu ">
+                {{productList.id}}
+                {{productList.name}}
+                {{productList.price}}
+                {{productList.type}}
+                <img src="{{productList.image}}" alt="producto">
+                <button class="addOrder">Agregar</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+
+            <h1>poner la orden tomada</h1>
+            <div>
+                <label for="client"><mark>Nombre del cliente</mark></label>
+                <input type="text" name="" id="client">
+                <p>Total:</p>
+                <button type="button" class="btn btn-success">Enviar a Cocina</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -5,24 +5,25 @@
 </div>
 <button type="button" class="btn btn-success float-end">Editar</button> 
 <button type="button"class="fa-solid fa-trash">Eliminar</button> -->
-
-<a routerLink="employees">Gestión de empleados</a>   
-<div class="postProduct">
+<div>
+  <a id= "employeesView" routerLink="employees">Gestión de empleados</a>   
+</div>
+<button (click)="hideData()">Ocultar productos</button>
+<div  id="productsView" >
 <form [formGroup]="form" (submit)="addProduct()">
     <p  id="alertmessage" class="alert alert-danger"> </p><br> 
     <p class="addProduct">Agrega un nuevo producto al menú</p>
     <label for="name">Nombre</label>
     <input type="text" id="name" name="name" formControlName="name"> 
-    <label for="category">Categoria</label>
-    <input type="text" id="category" name="category" formControlName="category"> 
-    <label for="cost">Costo</label>
-    <input type="text" name="cost" id="cost" formControlName="cost"> 
-    <label for="precio">Precio</label>
-    <input type="text" name="precio" id="precio" formControlName="precio"> 
+    <label for="type">Categoria</label>
+    <input type="text" id="type" name="Tipo" formControlName="type"> 
+    
+    <label for="price">Precio</label>
+    <input type="text" name="precio" id="price" formControlName="price"> 
 
-    <input type="submit" value="Crear nuevo producto">
+    <input type="submit" value="Crear nuevo producto" class="btn btn-primary">
 </form>
-</div>
+
 <div>
  
 </div>
@@ -32,20 +33,20 @@
         <tr>
         <th scope="col">Id</th>
         <th scope="col">Name</th>
-        <th scope="col">Categoria</th>
-        <th scope="col">Costo</th>
-        <th scope="col">Cantidad</th>
+        <th scope="col">Price</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">producto</th>
         <th scope="col">Opciones</th>
       </tr>
     </thead>
     <tbody >
         <tr *ngFor="let productList of menu" 
         [ngClass]=  "{'active': productList?.id=== selection?.id}">
-        <td>{{productList.id}}</td>
-        <td>{{productList.name}}</td>
-        <td>{{productList.category}}</td>
-        <td>{{productList.cost}}</td>
-        <td>{{productList.precio}}</td>
+        <td  >{{productList.id}}</td>
+        <td >{{productList.name}}</td>
+        <td >{{productList.price}}</td>
+        <td >{{productList.type}}</td>
+        <td><img src="{{productList.image}}" alt="producto"></td>
         <td>
         <button 
         type="button"
@@ -55,15 +56,17 @@
           <button 
           type="button" 
           class="btn btn-success float-end"
+          (click)="UpdateInfo(  form.value, productList?.id)"
           >Editar
         </button>
       
       </td>
       </tr>
-
+   
     </tbody>
     <tfoot>
     </tfoot>
   </table>
+</div>
 <router-outlet></router-outlet>
   
