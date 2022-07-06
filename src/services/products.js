@@ -1,8 +1,8 @@
 import axios from 'axios';
-import {urlBase} from '../config'
+// import {urlBase} from '../config'
 
 
-const urlProducts = `${urlBase}/products`
+const urlProducts = "http://localhost:5000/products";
 
 export const createProduct = (data)=>{
   return axios.post(urlProducts, data)

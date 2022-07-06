@@ -16,9 +16,7 @@ export const ItemCart = ({item}) => {
        <div className="left">
           <p> {item.name} </p>
            <div className="buttons">
-               {/* <button onClick={() => {addItemToCart(item)}}> Agregar </button> */}
                <Button type="submit" onClick={() => {addItemToCart(item)}} className="btn btn-warning btn-sm" name="Agregar" ></Button>
-                {/* <button onClick={() => {deleteItemToCart(item)}}> Sacar </button> */}
                 <Button type="submit" onClick={() => {deleteItemToCart(item)}} className="btn btn-warning btn-sm" name="Eliminar" ></Button>
             </div>
         </div>
