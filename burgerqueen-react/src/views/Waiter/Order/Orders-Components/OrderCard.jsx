@@ -1,4 +1,4 @@
-import style from './Card.module.css';
+import style from './OrderCard.module.css';
 import CardProduct from './CardProduct';
 import CardButton from './CardButton';
 
@@ -21,10 +21,10 @@ function OrderCard({client, dataEntry, userId, status, products }){
             <div className={style.Card__button}>
                 <CardButton/>
                 <p>Status: {status}</p>
-                <p>tiempo de prepaión: -</p>
+                <p>tiempo de prepación: -</p>
             </div>
         </article>
     )
 }
 
-export default OrderCard
+export default OrderCard;

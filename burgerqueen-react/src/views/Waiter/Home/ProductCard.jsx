@@ -1,17 +1,14 @@
 import style from './ProductCard.module.css'
-function ProductCard({prop}){
-    function addProducttoLocalS(){
-        localStorage.setItem(`product-${prop.id}`, prop.id)
-        return console.log(prop)
-    }
+function ProductCard({product, addProductsSelected}){
+
     return (
         
         <div className={style.ProductCard}>
-            <img src={prop.image} alt='imgProduct'></img>
-            <h4>{prop.name}</h4>
+            <img src={product.image} alt='imgProduct'></img>
+            <h4>{product.name}</h4>
             <div>
-                <p>$ {prop.price}</p>
-                <button onClick={addProducttoLocalS}>Add</button>
+                <p>$ {product.price}</p>
+                <button onClick={(event) => addProductsSelected(event, product)}>Add</button>
             </div>
         </div>
         

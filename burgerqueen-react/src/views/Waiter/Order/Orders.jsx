@@ -1,7 +1,7 @@
 import style from './Orders.module.css'
 import VerticalBar from "./Orders-Components/VerticalBar";
-import OrderCard from "./Orders-Components/Card";
-import CardProduct from './Orders-Components/CardProduct';
+import OrderCard from "./Orders-Components/OrderCard";
+// import CardProduct from './Orders-Components/CardProduct';
 import { useState, useEffect } from 'react';
 
 const Order = () => {

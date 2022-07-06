@@ -8,10 +8,16 @@ import ListOfOrder from './ListOfOrder';
 
 const Home = () => {
     const [ products, setProducts ] = useState();
+    const [ productsSelected, setProductsSelected] = useState([]);
 
     const token = localStorage.getItem('accessToken');
     // const productInLS = localStorage.getItem('product-1')
-
+    const addProductsSelected = (event, product) => {
+        event.preventDefault();
+        setProductsSelected([...productsSelected, product]);
+        
+    }
+    console.log(productsSelected)
     const getProducts = () => fetch('http://localhost:8080/products', {
             method: "GET",
             headers: {
@@ -25,6 +31,7 @@ const Home = () => {
 
     useEffect(()=>{
         getProducts();
+        
         
     }, [])
 
@@ -67,12 +74,13 @@ const Home = () => {
                     </div> 
                     <div className="list-of-Products">
                         <div>
-                        {console.log(products)}
                         {!products ? 'Cargando...' : 
                         products.map((product) => {
                             return  <ProductCard 
                                 key={product.id}
-                                prop={product} /> 
+                                product={product}
+                                addProductsSelected={addProductsSelected}                                
+                                /> 
                                 })}
                         </div>
                     </div>

@@ -1,4 +1,3 @@
-// import product from '../../../Images/burger-lunch.svg';
 import style from './CardProduct.module.css'
 function CardProduct({img, name, qty, price}){
     return(

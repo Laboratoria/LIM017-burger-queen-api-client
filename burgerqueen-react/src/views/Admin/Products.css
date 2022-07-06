@@ -1,7 +1,9 @@
 .Table {
     text-align: center;
 } 
-
+.image-product-Admin{
+    width: 40px;
+}
 /* .HomeAdmin{
     background-image: url('../Images/Burger.png');
     background-repeat: no-repeat;

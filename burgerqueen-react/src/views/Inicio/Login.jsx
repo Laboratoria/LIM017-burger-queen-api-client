@@ -33,8 +33,9 @@ const LoginForm = () => {
           const { accessToken, user } = res;
           const rol = user?.roles;
           console.log(user)
-          localStorage.setItem('userId', user.id)
+          
           localStorage.setItem('accessToken', accessToken);
+          localStorage.setItem('userId', user.id);
 
             if(res === 'Cannot find user'){
               setError('email', {

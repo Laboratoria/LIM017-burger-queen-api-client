@@ -19,25 +19,30 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 //      <App />  
 //    </React.StrictMode>
 // );
+const test = false;
+
+
 root.render(
   <BrowserRouter>
     <Routes>
       <Route path='/' element={<Inicio />}></Route>
       <Route path='/Login' element={<Login />}></Route>
-
+      <Route path='*' element={<PageNotFound />}></Route>
       <Route path='/Waiter/' element={<AppWaiter />}>
         <Route index element={<HomeWaiter/>}/>
         <Route path='Profile' element={<Profile />}/>
         <Route path='Orders' element={<Order />}/>
         <Route path='*' element={<PageNotFound />}/>
       </Route>
-
-      <Route path='/Admin' element={<AppAdmin/>}>
+      {/* {test && ( */}
+        <Route path='/Admin' element={<AppAdmin/>}>
         <Route index element={<Products/>}/>
         <Route path='ProfileAdmin' element={<ProfileAdmin />}/>
         <Route path='Users' element={<Users />}/>
-        <Route path='*' element={<PageNotFound />}/>
+        
       </Route>
+      {/* )} */}
+      
     </Routes>
   </BrowserRouter>
 );
