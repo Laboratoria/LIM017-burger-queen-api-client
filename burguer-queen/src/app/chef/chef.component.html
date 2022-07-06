@@ -1,23 +1,21 @@
 <div class="col-md-4">
-    <div class="http" *ngFor="let product of menu " > 
-      <!-- //posible cambiar a tabla -->
-      <ul class="list-group">
-        <li class="list-group-item">
-          {{product.client}} 
-          {{product.id}} <br>
-          {{product.status}} <br>
-          {{product.dataEntry}} <br>
-          {{ product.products[0].product.name}} <br>
-          {{ product.products[0].product.price}} <br>
-          {{ product.products[0].product.type}} <br>
-          <img src="{{ product.products[0].product.image}}" alt=""> <br>
-          {{ product.products[1].product.name}} <br>
-          {{ product.products[1].product.price}} <br>
-          {{ product.products[1].product.type}} <br>
-          <img src="{{ product.products[1].product.image}}" alt=""> <br>
-        <button type="button" class="btn btn-danger float-end">Delete</button> 
-        </li>
-      </ul>
-      </div>
-     <p>Total:</p>
-     <button type="button" class="btn btn-success">Enviar a Cocina</button>
+  <div class="http" *ngFor="let product of menu ">
+    <!-- //posible cambiar a tabla -->
+    <ul class="list-group">
+      <li class="list-group-item">
+        {{product.client}}
+        {{product.id}} <br>
+        <button class="btn btn-warning"> {{product.status}} </button><br>
+        {{product.dataEntry}} <br>
+        {{ product.products[0].product.name}} <br>
+        {{ product.products[0].product.price}} <br>
+        {{ product.products[0].product.type}} <br>
+        <img src="{{ product.products[0].product.image}}" alt=""> <br>
+        {{ product.products[1].product.name}} <br>
+        {{ product.products[1].product.price}} <br>
+        {{ product.products[1].product.type}} <br>
+        <img src="{{ product.products[1].product.image}}" alt=""> <br>
+      </li>
+    </ul>
+  </div>
+  <p>Total:</p>

@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { itemsEdited, Order } from '../app.module';
+import { ItemsEdited, Order } from '../app.module';
 import { MenuService } from '../services/menu.service';
 
 
@@ -45,7 +45,7 @@ export class AdminComponent implements OnInit {
     }
   }
 
-  UpdateInfo(menu: any, body: itemsEdited):void{
+  UpdateInfo(menu: any, body: ItemsEdited):void{
     this.menuService.update(menu, body)
     .subscribe({
     next:res => {

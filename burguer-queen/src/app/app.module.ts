@@ -61,6 +61,7 @@ export interface Order {
   products: any;
   client: string;
   status: string;
+  // productList: ItemsEdited;
 }
 export interface LoginResponse {
   accessToken: string;
@@ -83,11 +84,14 @@ export interface Credentials {
   password: string;
   id?: any;
 }
- export interface itemsEdited {
+ export interface ItemsEdited {
   name: string;
   price: string;
   type: string;
   image?: any;
   dataEntry?: any;
+  qty?: number;
+  userId?: number;
+  client: string;
  }
 

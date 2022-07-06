@@ -11,8 +11,8 @@ import { Router } from '@angular/router';
 })
 export class MenuService {
 
-  private apiUrl = 'http://localhost:8080/orders';
-  private urlProducts = ' http://localhost:8080/products';
+  private apiUrl = 'http://localhost:8080/orders/';
+  private urlProducts = ' http://localhost:8080/products/';
   private urlUser = ' http://localhost:8080/';
   public user = {
     email: '',
@@ -105,6 +105,9 @@ export class MenuService {
   }
 
   update(product: any, body: any): Observable<void> {  
-      return this.http.patch<void>(`${this.urlProducts}/${product.id}`, body,  this.httpOptions() )
+      return this.http.patch<void>(`${this.urlProducts}${product.id}`, body,  this.httpOptions() )
+  }
+  updateOrder(order:any, body: any): Observable<void> {
+    return this.http.patch<void>(`${this.apiUrl}${order.id}`, body, this.httpOptions())
   }
 }

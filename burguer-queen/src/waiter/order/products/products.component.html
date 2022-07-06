@@ -1,21 +1,46 @@
 <a routerLink="/waiter">Ver Ordenes</a>
 <router-outlet></router-outlet>
-<button class="nav-menu" data-value="breakfast">
+
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+  </button>
+  
+  <-- Modal -->
+  <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>  -->
+<!-- <button class="nav-menu" data-value="breakfast">
     Desayunos
 </button>
 <button class="nav-menu" data-value="lunch">
     Almuerzos y Acompañamientos
-</button>
+</button> -->
 <div class="container">
     <div class="row">
         <div class="col-md-8">
-            <div *ngFor=" let productList of menu ">
+            <div *ngFor=" let productList of menu " (click)="onClick(productList)" [ngClass]="{'alert alert-info': productList.id === selection}">
                 {{productList.id}}
                 {{productList.name}}
                 {{productList.price}}
                 {{productList.type}}
-                <img src="{{productList.image}}" alt="producto">
-                <button class="addOrder">Agregar</button>
+                <img src="{{productList.image}}" alt="producto"><br>
             </div>
         </div>
         <div class="col-md-4">
@@ -23,7 +48,9 @@
             <h1>poner la orden tomada</h1>
             <div>
                 <label for="client"><mark>Nombre del cliente</mark></label>
-                <input type="text" name="" id="client">
+                <input type="text" name="" id="client" >
+                <label for="userId"><mark>ID del cliente</mark></label>
+                <input type="text" name="" id="userId"> 
                 <p>Total:</p>
                 <button type="button" class="btn btn-success">Enviar a Cocina</button>
             </div>

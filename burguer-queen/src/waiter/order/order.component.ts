@@ -9,7 +9,8 @@ import { Order } from '../../app/app.module';
   styleUrls: ['./order.component.css']
 })
 export class OrderComponent implements OnInit {
-  menu: Order[] = [];
+  menu:any= [];
+  product: any= [];
 
 
  title = 'Ecuaburguer';
@@ -30,7 +31,19 @@ export class OrderComponent implements OnInit {
   
   ngOnInit(): void {
     this.menuService.getOrder().subscribe(
-      (menu) => (this.menu = menu, console.log(menu)));
+      (menu) => (this.menu = menu
+        
+      //   .map((element)=>{
+      //   const data = {
+      //     ...element,
+      //     name: element.products.product.name,
+      //     price: element.products.product.price,
+      //     type:  element.products.product.type,
+      //     image:  element.products.product.image 
+      //   }
+      //   return data;
+      // })
+      , console.log(menu)));
   }
   
   onClick(breakfast: string): void {

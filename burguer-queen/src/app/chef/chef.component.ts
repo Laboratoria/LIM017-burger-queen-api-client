@@ -15,5 +15,9 @@ export class ChefComponent implements OnInit {
     this.menuService.getOrder().subscribe(
       (menu) => (this.menu = menu, console.log(menu)));
   }
+  
+  // updateStatus(){
+  //   this.menuService.updateOrder()
+  // }
 
 }
