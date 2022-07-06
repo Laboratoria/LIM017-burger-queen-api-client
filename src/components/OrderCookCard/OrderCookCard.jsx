@@ -1,12 +1,8 @@
 import './style.css';
-import { Button } from '../../components/Button/Button';
 import { createOrder } from '../../services/orders';
 
-export const CookCard = ({orderLines}) =>{
 
-  createOrder()
-    .then()
-    .catch()
+export const CookCard = ({orderLines}) =>{
 
   return(
     <div className="CookCardContainer">
@@ -28,7 +24,6 @@ export const CookCard = ({orderLines}) =>{
         )
        })}
      </table>
-     <Button type="submit"  className="btn btn-warning btn-lg" name="Preparado" ></Button>
     </div>
   )
 }

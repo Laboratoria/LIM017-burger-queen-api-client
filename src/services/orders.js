@@ -15,3 +15,8 @@ export const getOrder = (id) => {
   const urlOrder = `${urlOrders}/${id}`
   return axios.get(urlOrder)
 }
+
+export const putOrder =(id, data) =>{
+  const urlOrder = `${urlOrders}/${id}`
+  return axios.put(urlOrder, data)
+}
