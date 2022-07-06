@@ -16,5 +16,11 @@ export class ProductsComponent implements OnInit {
   this.menuService.getProduct().subscribe((menu) => (this.menu = menu, console.log(menu)))
 
   }
-
+  numero: number = 1;
+  sumar(){
+    this.numero +=1
+  }
+  restar(){
+    this.numero -=1
+  }
 }

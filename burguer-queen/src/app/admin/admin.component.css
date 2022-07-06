@@ -1,6 +1,13 @@
 .hide{
     display: none;
 }
+a{
+    color: #FB727C;
+    text-align: center;
+    font-size: 27px;
+    font-family: 'Inter', sans-serif;
+    margin:20px;
+}
 button{
     margin-top: 10px;
     padding: 10px;
@@ -8,3 +15,4 @@ button{
     border: none;
     margin-right: 10px;
   }
+  
