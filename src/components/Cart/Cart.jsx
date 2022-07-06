@@ -38,7 +38,9 @@ export const Cart= () => {
         }
       ]
     }
-    createOrder(data).then().catch()
+    createOrder(data)
+      .then()
+      .catch()
     
   return(
   <div className="cartContainer">

@@ -15,8 +15,19 @@
 .State{
   width: 100px;
   height: 30px;
-  background-color: green;
   font-weight: bold;
   color: white;
-  padding-left: 2px;
+  text-align: center;
+}
+.pending{
+  background-color: red;
+}
+.delivered{
+  background-color: green;
+}
+.delivering{
+  background-color: yellow;
+}
+.canceled{
+  background-color: gray;
 }
