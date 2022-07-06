@@ -1,0 +1,22 @@
+header{
+    background: #0D0C0C;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    color: white;
+    height: 8vh;
+}
+.logoName{
+    display: flex;
+    align-items: center;
+}
+.logowaiter{
+    height: 7vh;
+    margin-left: 15px;
+}
+h3{
+    margin-left: 5px;
+    font-family: 'Lobster', cursive;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 50px;
+}

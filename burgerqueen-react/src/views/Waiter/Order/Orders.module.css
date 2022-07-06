@@ -1,0 +1,18 @@
+.Container{
+    /* background-color: brown; */
+    width: 100%;
+    height: 93vh;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+.SectionCards{
+    padding: 20px;
+    /* background-color: aqua; */
+}
+.Cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 280px);
+    gap: 40px;
+    justify-content: center;
+    /* background-color: blueviolet; */
+}

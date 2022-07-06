@@ -1,0 +1,68 @@
+.ProductCard{
+    /* width: 25%; */
+    background-color: rgba(255, 255, 255, 0.528);
+    margin: 10px;
+    height: 200px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.ProductCard>h1{
+    background-color: rgb(18, 48, 48);
+    
+}
+.ProductCard>div{
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.47);
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    width: 100%;
+}
+.ProductCard>div>p{
+    font-size: medium;
+    font-weight: 600;
+}
+.ProductCard>div>button{
+    align-items: center;
+    background-clip: padding-box;
+    background-color: #fa6400;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    /* box-sizing: border-box; */
+    color: #fff;
+    cursor: pointer;
+    font-size: smaller;
+    font-weight: 600;
+    justify-content: center;
+    margin: 0;
+    min-height: 2.0rem;
+    /* padding: calc(.875rem - 1px) calc(1.5rem - 1px); */
+    position: relative;
+    transition: all 250ms;
+    width: auto;
+}
+      
+.ProductCard>div>button,
+.ProductCard>div>button {
+    background-color: #fb8332;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+      
+.ProductCard>div>button:hover {
+    transform: translateY(-1px);
+}
+      
+.ProductCard>div>button:active {
+    background-color: #c85000;
+    box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+    transform: translateY(0);
+}
+
+.ProductCard>img{
+    width: 70px;
+    /* background-color: aqua; */
+}

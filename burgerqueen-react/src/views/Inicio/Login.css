@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+.App-main {
+    background-image: url('../Images/Burger.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+    color: white;
+}
+  
+.App-logo {
+    margin-top: 4vh;
+    height: 30vmin;
+    pointer-events: none;
+}
+  
+.sectionLoginForm{
+    background: rgba(0, 0, 0, 0.429);
+    margin-top: 5vh;
+    width: 520px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+  
+.loginForm{
+    /* background-color: brown; */
+    width: 390px;
+    text-align: center;
+}
+  
+.col-md-3{
+    width: 100%;
+    /* background-color: aqua; */
+}
+.label-form{
+    /* background-color: blue; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 35px;
+    text-align: left;
+    font-weight: 400;
+}
+  
+.div__Icon-Input{
+    /* background-color: rgb(9, 35, 35); */
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+  
+.Icon {
+      position: absolute;
+      align-self: center;
+      pointer-events: none;
+      margin-left:20px;
+      color:white;
+      margin-top: 15px;
+      font-size: medium;
+}
+  
+.input-form-control{
+    background: rgba(0, 0, 0, 0.483);
+    border: 0.3px solid #ffffff9b;
+    border-radius: 13px;  
+    width: 390px;
+    height: 40px;
+    margin-top: 15px;
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+}
+  
+.input-form-control::placeholder{
+    margin-left:auto;
+    color: rgba(255, 255, 255, 0.585);
+    font-size: 15px;
+}
+  
+.btn-primary{
+    background: #F5EDDA;
+    border: none;
+    border-radius: 31.5px;
+    width: 150px;
+    height: 55px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    font-family: 'Lobster', cursive;
+    font-weight: 400;
+    font-size: 27px;
+    line-height: 50px;
+    color: #363636;
+    align-content: center;
+}
+  
+.btn-primary:hover{
+    cursor: pointer;
+    background:#eb8912bd;
+    color: #000000;
+}
+
+.spanLogin{
+  color: #ffdd00;
+  position: absolute;
+  font-size: 14px;
+  margin-top: 76px;
+  /* background-color: #000000; */
+  width: 390px;
+  text-align: right;
+  padding: 5px;
+}
+
+
+  
