@@ -8,7 +8,7 @@ import { Orders } from './pages/Orders/Orders';
 import { Order } from './pages/Order/Order';
 import { CrudApi } from './components/crud/CrudApi';
 import { CrudProducts } from './components/crudProducts/CrudProducts';
-// import {NavRef} from './components/Navbar/Navbar'
+
 
 
 
@@ -16,7 +16,7 @@ function App() {
  return (
   <BrowserRouter>
     <Routes>
-      {/* <Route path='/Nav' element={<NavRef/>}/> */}
+     
       <Route path='/' element={<Onboarding/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/home' element={<Home/>}/> 
