@@ -1,85 +1,4 @@
 {
-  "products": [
-    {
-      "dateEntry": "2022-06-18",
-      "name": "Hamburguesa Triple",
-      "price": "25",
-      "image": "https://s7d1.scene7.com/is/image/mcdonalds/t-mcdonalds-Triple-Cheeseburger:1-3-product-tile-desktop?wid=829&hei=515&dpr=off",
-      "id": 5,
-      "type": "Almuerzo"
-    },
-    {
-      "dateEntry": "2022-06-18",
-      "name": "Hamburguesa Napolitana",
-      "price": "18",
-      "image": "https://s7d1.scene7.com/is/image/mcdonalds/t-mcdonalds-Triple-Cheeseburger:1-3-product-tile-desktop?wid=829&hei=515&dpr=off",
-      "id": 6,
-      "type": "Almuerzo"
-    },
-    {
-      "dateEntry": "2022-06-18",
-      "name": "Capuchino",
-      "price": "9",
-      "image": "https://www.recetasderechupete.com/wp-content/uploads/2021/03/Capuchino-perfecto.jpg",
-      "id": 8,
-      "type": "Desayuno"
-    },
-    {
-      "dateEntry": null,
-      "name": "Café",
-      "price": "8",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.JPG",
-      "type": "Desayuno",
-      "id": 1657074820677
-    },
-    {
-      "dateEntry": null,
-      "name": "Frapuchino",
-      "price": "10",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRukwQB2AgIYjw-N3eN0DXj7uAxsQYuB6hMJmXqYrWgk25Qd8qYqvDsG_JBay0K6XgCoYg&usqp=CAU",
-      "type": "Desayuno",
-      "id": 1657075428332
-    },
-    {
-      "dateEntry": null,
-      "name": "Hamburguesa clásica ",
-      "price": "20",
-      "image": "https://s7d1.scene7.com/is/image/mcdonalds/t-mcdonalds-Triple-Cheeseburger:1-3-product-tile-desktop?wid=829&hei=515&dpr=off",
-      "type": "Almuerzo",
-      "id": 1657075877629
-    },
-    {
-      "dateEntry": null,
-      "name": "Americano",
-      "price": "10",
-      "image": "hhghghghg",
-      "type": "Desayuno",
-      "id": 1657113332849
-    }
-  ],
-  "users": [
-    {
-      "id": 1,
-      "email": "anita.borg@systers.xyz",
-      "roles": {
-        "admin": "true"
-      }
-    },
-    {
-      "id": 2,
-      "email": "grace.hopper@systers.xyz",
-      "roles": {
-        "admin": "true"
-      }
-    },
-    {
-      "id": 1657071541832,
-      "email": "emilife@rocketmail.com",
-      "roles": {
-        "admin": "false"
-      }
-    }
-  ],
   "orders": [
     {
       "id": 1,
@@ -120,7 +39,7 @@
         {
           "qty": 2,
           "product": {
-            "id": 1,
+            "id": 2,
             "name": "Café americano",
             "price": 500,
             "image": "https://github.com/Laboratoria/bootcamp/tree/main/projects/04-burger-queen-api/resources/images/coffe.jpg",
@@ -131,7 +50,7 @@
         {
           "qty": 1,
           "product": {
-            "id": 2,
+            "id": 3,
             "name": "Agua 500ml",
             "price": 500,
             "image": "https://github.com/Laboratoria/bootcamp/tree/main/projects/04-burger-queen-api/resources/images/water.jpg",
@@ -145,22 +64,33 @@
       "dateProcessed": "2022-03-05 16:00"
     },
     {
-      "client": "emi",
+      "client": "",
       "products": [
         {
-          "dateEntry": "2022-06-18",
-          "name": "Car",
-          "price": 34,
-          "image": "https://cmslogistics.es/134-thickbox_default/hamburguesa-de-buey-200-gr.jpg",
-          "id": 2,
+          "id": 1,
+          "name": "Sandwich de jamón y queso",
+          "price": 1000,
+          "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/sandwich.png",
+          "type": "Desayuno",
+          "dateEntry": "2022-03-05 15:14:10",
           "qty": 1
         },
         {
-          "dateEntry": "2022-06-18",
-          "name": "Mouse",
-          "price": 35,
-          "image": "http://loremflickr.com/640/480/food",
-          "id": 4,
+          "id": 3,
+          "name": "Agua 500ml",
+          "price": 500,
+          "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/water.png",
+          "type": "Almuerzo",
+          "dateEntry": "2022-03-05 15:14:10",
+          "qty": 1
+        },
+        {
+          "id": 2,
+          "name": "Café americano",
+          "price": 500,
+          "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/coffee.png",
+          "type": "Desayuno",
+          "dateEntry": "2022-03-05 15:14:10",
           "qty": 1
         }
       ],
@@ -168,111 +98,81 @@
       "id": 3
     },
     {
-      "client": "Iara",
+      "client": "Maria",
       "products": [
         {
-          "dateEntry": "2022-06-18",
-          "name": "Car",
-          "price": 34,
-          "image": "https://cmslogistics.es/134-thickbox_default/hamburguesa-de-buey-200-gr.jpg",
-          "id": 2,
+          "id": 1,
+          "name": "Sandwich de jamón y queso",
+          "price": 1000,
+          "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/sandwich.png",
+          "type": "Desayuno",
+          "dateEntry": "2022-03-05 15:14:10",
           "qty": 1
         },
         {
-          "dateEntry": "2022-06-18",
-          "name": "Mouse",
-          "price": 35,
-          "image": "http://loremflickr.com/640/480/food",
-          "id": 4,
+          "id": 3,
+          "name": "Agua 500ml",
+          "price": 500,
+          "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/water.png",
+          "type": "Almuerzo",
+          "dateEntry": "2022-03-05 15:14:10",
           "qty": 1
         }
       ],
       "status": "pending",
       "id": 4
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Sandwich de jamón y queso",
+      "price": 1000,
+      "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/sandwich.png",
+      "type": "Desayuno",
+      "dateEntry": "2022-03-05 15:14:10"
     },
     {
-      "client": "Angie",
-      "products": [
-        {
-          "dateEntry": "2022-06-18",
-          "name": "Hamburguesa Napolitana",
-          "price": "18",
-          "image": "https://s7d1.scene7.com/is/image/mcdonalds/t-mcdonalds-Triple-Cheeseburger:1-3-product-tile-desktop?wid=829&hei=515&dpr=off",
-          "id": 6,
-          "type": "Almuerzo",
-          "qty": 1
-        },
-        {
-          "dateEntry": "2022-06-18",
-          "name": "Capuchino",
-          "price": "9",
-          "image": "https://www.recetasderechupete.com/wp-content/uploads/2021/03/Capuchino-perfecto.jpg",
-          "id": 8,
-          "type": "Desayuno",
-          "qty": 1
-        },
-        {
-          "dateEntry": null,
-          "name": "Hamburguesa clásica ",
-          "price": "20",
-          "image": "https://s7d1.scene7.com/is/image/mcdonalds/t-mcdonalds-Triple-Cheeseburger:1-3-product-tile-desktop?wid=829&hei=515&dpr=off",
-          "type": "Almuerzo",
-          "id": 1657075877629,
-          "qty": 1
-        }
-      ],
-      "status": "pending",
-      "id": 5
+      "id": 2,
+      "name": "Café americano",
+      "price": 500,
+      "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/coffee.png",
+      "type": "Desayuno",
+      "dateEntry": "2022-03-05 15:14:10"
     },
     {
-      "client": "Mariano ",
-      "products": [
-        {
-          "dateEntry": "2022-06-18",
-          "name": "Hamburguesa Triple",
-          "price": "25",
-          "image": "https://s7d1.scene7.com/is/image/mcdonalds/t-mcdonalds-Triple-Cheeseburger:1-3-product-tile-desktop?wid=829&hei=515&dpr=off",
-          "id": 5,
-          "type": "Almuerzo",
-          "qty": 1
-        },
-        {
-          "dateEntry": null,
-          "name": "Café",
-          "price": "8",
-          "image": "https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.JPG",
-          "type": "Desayuno",
-          "id": 1657074820677,
-          "qty": 1
-        }
-      ],
-      "status": "pending",
-      "id": 6
+      "id": 3,
+      "name": "Agua 500ml",
+      "price": 500,
+      "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/water.png",
+      "type": "Almuerzo",
+      "dateEntry": "2022-03-05 15:14:10"
     },
     {
-      "client": "Angelica",
-      "products": [
-        {
-          "dateEntry": "2022-06-18",
-          "name": "Hamburguesa Triple",
-          "price": "25",
-          "image": "https://s7d1.scene7.com/is/image/mcdonalds/t-mcdonalds-Triple-Cheeseburger:1-3-product-tile-desktop?wid=829&hei=515&dpr=off",
-          "id": 5,
-          "type": "Almuerzo",
-          "qty": 1
-        },
-        {
-          "dateEntry": "2022-06-18",
-          "name": "Capuchino",
-          "price": "9",
-          "image": "https://www.recetasderechupete.com/wp-content/uploads/2021/03/Capuchino-perfecto.jpg",
-          "id": 8,
-          "type": "Desayuno",
-          "qty": 1
-        }
-      ],
-      "status": "pending",
-      "id": 7
+      "dateEntry": null,
+      "name": "Capuchino ",
+      "price": "8",
+      "image": "https://www.recetasderechupete.com/wp-content/uploads/2021/03/Capuchino-perfecto.jpg ",
+      "type": "Desayuno",
+      "id": 1657203206021
+    }
+  ],
+  "users": [
+    {
+      "email": "anita.borg@systers.xyz",
+      "password": "$2a$10$gVkmcWdnwEBxXj2PWjuv9uDx7BfjiAobbabDAOrH2o8b1i3E7KwR.",
+      "roles": {
+        "admin": true
+      },
+      "id": 1
+    },
+    {
+      "email": "grace.hopper@systers.xyz",
+      "password": "$2a$10$JABwR1UAtJqr2DCJ41ypMOgOqlh8eRXmTBO6DXfKG3ybxhABY4rey",
+      "roles": {
+        "admin": true
+      },
+      "id": 2
     }
   ]
 }
