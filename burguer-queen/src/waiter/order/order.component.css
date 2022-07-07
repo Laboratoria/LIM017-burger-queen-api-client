@@ -1,20 +1,45 @@
+<<<<<<< HEAD
 /* .breakfast{
+=======
+ul {
+    list-style-type: none;
+}
+.breakfast{
+    margin-top: 10%;
+>>>>>>> e4e2b67a1b634198911dc743d982f17f74a06d13
     width: 95px;
     height: 95px;
+    margin: 50px;
 }
 .lunch{
+    margin-top: 10%;
     width: 95px;
     height: 95px;
+    
 }
 .rown{
     display: flex;
     flex-direction: row;
     align-content: center;
     position: relative;
-    left: 50%;
+    left: 40%;
 }
+<<<<<<< HEAD
 ul {
     list-style-type: none;
 } */
 
   
+=======
+
+h1{
+    text-align: center;
+}
+a{
+    color: #FB727C;
+    text-align: center;
+    font-size: 27px;
+    font-family: 'Inter', sans-serif;
+    margin:20px;
+}
+>>>>>>> e4e2b67a1b634198911dc743d982f17f74a06d13

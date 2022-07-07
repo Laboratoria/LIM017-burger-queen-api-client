@@ -1,17 +1,10 @@
-<h2>ECUABURGUER</h2>
-<!-- <div class="row">
-    <div class="col-md-6">Desayunos</div>
-    <div class="col-md-6">Almuerzos</div>
-</div>
-<button type="button" class="btn btn-success float-end">Editar</button> 
-<button type="button"class="fa-solid fa-trash">Eliminar</button> -->
 <div>
   <a id= "employeesView" routerLink="employees">Gestión de empleados</a>   
 </div>
 <button (click)="hideData()">Ocultar productos</button>
 <div  id="productsView" >
 <form [formGroup]="form" (submit)="addProduct()">
-    <p  id="alertmessage" class="alert alert-danger"> </p><br> 
+    <!-- <p  id="alertmessage" class="alert alert-danger"> </p><br>  -->
     <p class="addProduct">Agrega un nuevo producto al menú</p>
     <label for="name">Nombre</label>
     <input type="text" id="name" name="name" formControlName="name"> 

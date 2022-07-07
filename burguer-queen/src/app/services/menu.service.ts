@@ -22,7 +22,6 @@ export class MenuService {
     id: 0
   }
 
-
   constructor(private http: HttpClient, private router: Router) { }
   accessToken = localStorage.getItem("accessToken")
 
@@ -110,4 +109,7 @@ export class MenuService {
   updateOrder(order:any, body: any): Observable<void> {
     return this.http.patch<void>(`${this.apiUrl}${order.id}`, body, this.httpOptions())
   }
+//   sumar(id: string)Observable<void> {
+//   return this.http.post<void>(`${this.urlProducts}/${id}`, this.httpOptions())
+// }
 }

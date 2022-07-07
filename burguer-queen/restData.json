@@ -113,5 +113,15 @@
     {
       "token": "24asfsas6f5safa"
     }
+  ],
+  "employees": [
+    {
+        "id": 15254,
+        "email": "anita.borg@systers.xyz",
+        "roles": {
+          "admin": true
+        }
+      
+    }
   ]
 }
