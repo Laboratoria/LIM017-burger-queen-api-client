@@ -47,6 +47,14 @@
       "image": "https://s7d1.scene7.com/is/image/mcdonalds/t-mcdonalds-Triple-Cheeseburger:1-3-product-tile-desktop?wid=829&hei=515&dpr=off",
       "type": "Almuerzo",
       "id": 1657075877629
+    },
+    {
+      "dateEntry": null,
+      "name": "Americano",
+      "price": "10",
+      "image": "hhghghghg",
+      "type": "Desayuno",
+      "id": 1657113332849
     }
   ],
   "users": [
@@ -215,6 +223,56 @@
       ],
       "status": "pending",
       "id": 5
+    },
+    {
+      "client": "Mariano ",
+      "products": [
+        {
+          "dateEntry": "2022-06-18",
+          "name": "Hamburguesa Triple",
+          "price": "25",
+          "image": "https://s7d1.scene7.com/is/image/mcdonalds/t-mcdonalds-Triple-Cheeseburger:1-3-product-tile-desktop?wid=829&hei=515&dpr=off",
+          "id": 5,
+          "type": "Almuerzo",
+          "qty": 1
+        },
+        {
+          "dateEntry": null,
+          "name": "Café",
+          "price": "8",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.JPG",
+          "type": "Desayuno",
+          "id": 1657074820677,
+          "qty": 1
+        }
+      ],
+      "status": "pending",
+      "id": 6
+    },
+    {
+      "client": "Angelica",
+      "products": [
+        {
+          "dateEntry": "2022-06-18",
+          "name": "Hamburguesa Triple",
+          "price": "25",
+          "image": "https://s7d1.scene7.com/is/image/mcdonalds/t-mcdonalds-Triple-Cheeseburger:1-3-product-tile-desktop?wid=829&hei=515&dpr=off",
+          "id": 5,
+          "type": "Almuerzo",
+          "qty": 1
+        },
+        {
+          "dateEntry": "2022-06-18",
+          "name": "Capuchino",
+          "price": "9",
+          "image": "https://www.recetasderechupete.com/wp-content/uploads/2021/03/Capuchino-perfecto.jpg",
+          "id": 8,
+          "type": "Desayuno",
+          "qty": 1
+        }
+      ],
+      "status": "pending",
+      "id": 7
     }
   ]
 }
