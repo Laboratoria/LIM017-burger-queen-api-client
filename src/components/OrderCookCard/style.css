@@ -5,11 +5,13 @@ flex-direction: column;
 align-items: center;
 }
 .Table{
+  width: 360px;
+  margin: 0 auto;
   margin-bottom: 60px;
 }
 .CardTitle{
   background-color: #EDEBE4;
-  font-size: 20px;
+  font-size: 16px;
   color: #333;
   font-family: 'Montserrat', sans-serif;
   padding: 4px;
@@ -24,4 +26,7 @@ align-items: center;
   font-size: 18px;
   font-weight: bold;
   text-align: center;
+}
+.btn-status{
+  margin-top: 30px;
 }
