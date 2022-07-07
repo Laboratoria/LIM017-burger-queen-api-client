@@ -10,7 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './auth/auth.guard';
 import { EmployeesComponent } from './employees/employees.component';
 import { ChefComponent } from './chef/chef.component';
-import { ProductsComponent } from 'src/waiter/order/products/products.component';
+import { ProductsComponent } from 'src/waiter/products/products.component';
 
 const routes: Routes = [
   { path: '',redirectTo: '/home', pathMatch: 'full'},
@@ -20,9 +20,9 @@ const routes: Routes = [
     {path:"employees",component: EmployeesComponent} 
   ]
 },
-  { path: 'waiter', component: OrderComponent,
+  { path: 'waiter', component: ProductsComponent,
   children: [ 
-    {path:"products", component: ProductsComponent} 
+    {path:"products", component: OrderComponent} 
   ] },
   { path: 'chef', component: ChefComponent},
   { path: 'home', component: HomeComponent},

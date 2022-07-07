@@ -34,45 +34,45 @@ describe('MenuService', () => {
     } 
 
     const mockResult = {
-      "token": "sd46s5a4da1sd435"
+      "accessToken": "sd46s5a4da1sd435"
     }
 
     httpClientSpy.post.and.returnValue(of(mockResult));  //TODO: Observable
 
-    const { email, password} = mockCredentials
+    // const { email, password} = mockCredentials
 
-    service.addUsers(email, password)
+    service.loginUsers(mockCredentials)
     .subscribe(res => { //TODO:Hacer que de por finalizado la prueba:
       expect(res).toEqual(mockResult)
       done();
     })
    })
     //TODO:Una respuesta incorrecta :400
-    it(' should return an error 400', (done: DoneFn)=> {
-      //TODO: mock de datos
-      const invalidCredential = {
-        email: 'adaj@ahd.com',
-        password: '123478'
-      }
-      const resultMock = new HttpErrorResponse({
-        error: "err",
-        status: 400,
-        statusText: 'Not Found'
-      }) 
+    // it(' should return an error 400', (done: DoneFn)=> {
+    //   //TODO: mock de datos
+    //   const invalidCredential = {
+    //     email: 'adaj@ahd.com',
+    //     password: '123478'
+    //   }
+    //   const resultMock = new HttpErrorResponse({
+    //     error: "err",
+    //     status: 400,
+    //     statusText: 'Not Found'
+    //   }) 
 
-      httpClientSpy.post.and.returnValue(throwError(resultMock))
-      //TODO:
-      const { email, password } = invalidCredential
-      service.addUsers(email, password)
-      .subscribe({
-        next: res => {
+    //   httpClientSpy.post.and.returnValue(throwError(resultMock))
+    //   //TODO:
+    //  // const { email, password } = invalidCredential
+    //   service.loginUsers(mockCRE)
+    //   .subscribe({
+    //     next: res => {
 
-        },
-        error: error => {
-          expect(error.status).toEqual(400);
-          done()
-        }
-      })
-    })
+    //     },
+    //     error: error => {
+    //       expect(error.status).toEqual(400);
+    //       done()
+    //     }
+    //   })
+    //})
 
-});
+//});

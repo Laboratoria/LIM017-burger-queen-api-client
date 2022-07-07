@@ -1,4 +1,4 @@
-import { NgModule,  CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
+import { NgModule,  CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule} from '@angular/common/http';
@@ -16,7 +16,17 @@ import { AuthGuard } from './auth/auth.guard';
 import { EmployeesComponent } from './employees/employees.component';
 import { ResolveStart } from '@angular/router';
 import { ChefComponent } from './chef/chef.component';
-import { ProductsComponent } from '../waiter/order/products/products.component';
+import { ProductsComponent } from '../waiter/products/products.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatGridListModule} from '@angular/material/grid-list'; 
+import {MatInputModule} from '@angular/material/input'; 
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { ModalComponent } from '../waiter/modal/modal.component'; 
 
 @NgModule({
   declarations: [
@@ -30,15 +40,25 @@ import { ProductsComponent } from '../waiter/order/products/products.component';
     HomeComponent,
     EmployeesComponent,
     ChefComponent,
-    ProductsComponent
+    ProductsComponent,
+    ModalComponent,
   ],
   imports: [
+    MatInputModule, 
+    MatFormFieldModule,
+    MatDialogModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-  ],
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatButtonModule,
+    MatSidenavModule,
+    FlexLayoutModule,
+    MatGridListModule,
+    ],
   providers: [
     MenuService, AuthGuard
   ],
