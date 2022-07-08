@@ -103,11 +103,13 @@ export class MenuService {
     return this.http.delete<void>(`${this.urlUser}users/${id}`, this.httpOptions())
   }
 
-  update(product: any, body: any): Observable<void> {  
-      return this.http.patch<void>(`${this.urlProducts}${product.id}`, body,  this.httpOptions() )
+  updateProduct( data: any, id:number): Observable<void> {  
+    console.log('id', id)
+    console.log('data', data)
+      return this.http.patch<void>(`${this.urlProducts}${id}`, data,  this.httpOptions() )
   }
-  updateOrder(order:any, body: any): Observable<void> {
-    return this.http.patch<void>(`${this.apiUrl}${order.id}`, body, this.httpOptions())
+  updateOrder(body: any, id:any): Observable<void> {
+    return this.http.patch<void>(`${this.apiUrl}${id}`, body, this.httpOptions())
   }
 //   sumar(id: string)Observable<void> {
 //   return this.http.post<void>(`${this.urlProducts}/${id}`, this.httpOptions())

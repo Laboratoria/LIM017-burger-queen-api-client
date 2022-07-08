@@ -32,7 +32,9 @@
         </div>
     </div>
 </div> -->
-
+<mat-card-actions>
+  <button mat-button (click)="openDialog()">Agregar</button>
+</mat-card-actions>
 <div fxLayout="row wrap" fxLayoutGap="16px grid">
   <div fxFlex="25%" fxFlex.xs="80%" fxFlex.sm="33%" *ngFor=" let productList of menu ">
     <mat-card class="example-card">
@@ -48,7 +50,7 @@
         </p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button (click)="openDialog()">Agregar</button>
+        <button mat-button (click)="addToModalComponent(menu)">Añadir al carrito</button>
       </mat-card-actions>
     </mat-card>
   </div>

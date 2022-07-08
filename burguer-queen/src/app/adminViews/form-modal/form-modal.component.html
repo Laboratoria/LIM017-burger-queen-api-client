@@ -1,0 +1,39 @@
+<h1 mat-dialog-title> Añadir nuevos productos al menú</h1>
+
+<div mat-dialog-content>
+    <form [formGroup]="form">
+    <mat-form-field appearance="outline">
+        <mat-label>Nombre</mat-label>
+        <input formControlName="name" matInput placeholder="Placeholder">
+        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+        <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Imagen</mat-label>
+        <input formControlName="image" matInput placeholder="Placeholder">
+        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+        <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Precio</mat-label>
+        <input formControlName="price" matInput placeholder="Placeholder">
+        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+        <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+    <h4>Tipo de producto</h4>
+    <mat-form-field appearance="fill">
+        <mat-label>Escoge una opción</mat-label>
+        <mat-select  formControlName="type">
+            <mat-option value="desayuno"> Desayuno </mat-option>
+            <mat-option value="almuerzo"> Almuerzos</mat-option>
+            <mat-option value="acompañamientos">Acompañamientos</mat-option>
+
+        </mat-select>
+    </mat-form-field>
+</form>
+</div>
+<div mat-dialog-actions [align]="'end'">
+    <button class="btnExit" mat-raised-button mat-dialog-close>Cerrar</button>
+    <button class="btnSave" mat-raised-button color="primary" (click)="addProduct()">{{actionBtn}} </button>
+</div>
+    

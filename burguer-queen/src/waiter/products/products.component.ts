@@ -3,6 +3,7 @@ import { ItemsEdited, Order } from 'src/app/app.module';
 import { MenuService } from 'src/app/services/menu.service';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ModalComponent } from '../modal/modal.component';
+import { BehaviorSubject } from 'rxjs';
 
 
 @Component({
@@ -15,9 +16,9 @@ export class ProductsComponent implements OnInit {
   menu: Order[] = [];
   selection!: string;
   inputs!: ItemsEdited;
+  arrayMenu: any = [];
   arrayBreakfast: any = [];
-
-
+  public productList = new BehaviorSubject<any>([]);
   constructor(public menuService: MenuService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
@@ -35,16 +36,7 @@ export class ProductsComponent implements OnInit {
         error: error => console.warn(error)
       })
   }
-  // filterCategories(e: any) {
-  //   const type = e.target.dataset.value;
-  //   if(type != ''){
-  //     this.arrayBreakfast = this.menu.filter((element: any)=> element.type === type)
-  //   } else {
-  //     this.arrayBreakfast = this.menu
-  //   }
-  //   console.log(this.arrayBreakfast)
-  //   return this.arrayBreakfast
-  // }
+
   addOrder(res: any) {
     this.inputs = {
       name: res.name,
@@ -61,25 +53,23 @@ export class ProductsComponent implements OnInit {
       })
   }
 
-  onClick(res: any): void {
-    this.inputs = {
-      name: res.name,
-      type: res.type,
-      price: res.price,
-      qty: res.qty,
-      userId: res.userId,
-      client: res.client
-    }
-    console.log('id', res);
-    this.selection = res;
-  }
+ 
   openDialog() {
     this.dialog.open(ModalComponent, {
       width: '50%'
 
     });
   }
-
+  addToModalComponent(menu: any){
+  
+    console.log(this.arrayMenu)
+  }
+  //agrega el array de menu desde un servicio
+  // addToModalComponent(menu: any){
+  //   this.arrayMenu.push(menu);
+  //   this.productList.next(this.arrayMenu)
+  //    console.log(this.arrayMenu)
+  //  }
 }
 
 

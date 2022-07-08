@@ -1,10 +1,47 @@
 <h1 mat-dialog-title> Add Ordenes</h1>
 <div mat-dialog-content>
-  <mat-form-field appearance="outline">
-    <mat-label>Outline form field</mat-label>
-    <input matInput placeholder="Placeholder">
-    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-    <mat-hint>Hint</mat-hint>
-  </mat-form-field>
-</div>
+    <mat-form-field appearance="outline">
+        <mat-label>Cliente</mat-label>
+        <input matInput placeholder="Placeholder">
+        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+        <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>userId</mat-label>
+        <input matInput placeholder="Placeholder">
+        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+        <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Cantidad</mat-label>
+        <input matInput placeholder="Placeholder">
+        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+        <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Escoge una opción</mat-label>
+        <mat-select [disabled]="disableSelect.value">
+            <mat-option value="option1" disabled>Estado de la orden</mat-option>
+            <mat-option value="option2"> Pendiente </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <h4>Tipo de producto</h4>
+    <mat-form-field appearance="fill">
+        <mat-label>Escoge una opción</mat-label>
+        <mat-select [disabled]="disableSelect.value">
+            <mat-option value="option1" disabled>Categoría</mat-option>
+            <mat-option value="option2"> Desayunos </mat-option>
+            <mat-option value="option3"> Almuerzos</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker touchUi #picker></mat-datepicker>
+    </mat-form-field>
+    
+      
 
+</div>

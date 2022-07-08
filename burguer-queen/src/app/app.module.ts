@@ -5,7 +5,7 @@ import { HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponentComponent } from './login-component/login-component.component';
-import { AdminComponent } from './admin/admin.component';
+import { AdminComponent } from './adminViews/admin/admin.component';
 import { OrderComponent } from '../waiter/order/order.component';
 import { RegisterComponent } from './register/register.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -22,11 +22,19 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatSelectModule} from '@angular/material/select'; 
 import {MatGridListModule} from '@angular/material/grid-list'; 
 import {MatInputModule} from '@angular/material/input'; 
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ModalComponent } from '../waiter/modal/modal.component'; 
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { FormModalComponent } from './adminViews/form-modal/form-modal.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import {MatTableModule} from '@angular/material/table'; 
+import {MatIconModule} from '@angular/material/icon'; 
 
 @NgModule({
   declarations: [
@@ -42,9 +50,16 @@ import { ModalComponent } from '../waiter/modal/modal.component';
     ChefComponent,
     ProductsComponent,
     ModalComponent,
+    FormModalComponent,
   ],
   imports: [
+    MatIconModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatNativeDateModule,
     MatInputModule, 
+    MatSelectModule,
     MatFormFieldModule,
     MatDialogModule,
     BrowserModule,
@@ -58,6 +73,7 @@ import { ModalComponent } from '../waiter/modal/modal.component';
     MatSidenavModule,
     FlexLayoutModule,
     MatGridListModule,
+    MatDatepickerModule,
     ],
   providers: [
     MenuService, AuthGuard
